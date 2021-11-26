@@ -12,9 +12,11 @@ class Auth extends CI_Controller {
 	//-------------------------------------------------------------------
 	// login functionality
 	public function login()
-	{
-		if ($this->input->post('login')) 
+	{	
+	
+		if ($this->input->post()) 
 		{
+				
 			$this->form_validation->set_rules('email','email','trim|required|min_length[3]|valid_email' );
 			$this->form_validation->set_rules('password','password','trim|required|min_length[3]');
 
@@ -22,12 +24,13 @@ class Auth extends CI_Controller {
 				$data = array(
 					'errors' => validation_errors()
 				);
-
+			
 				$this->session->set_flashdata('error_login', $data['errors']);
 				redirect(base_url('auth/login'),'refresh');
 			}
 			else
 			{
+				
 				$data = array(
 					'email' => $this->input->post('email'),
 					'password' => $this->input->post('password') 
@@ -62,12 +65,14 @@ class Auth extends CI_Controller {
 				else
 				{
 					$this->session->set_flashdata('error_login','invalid email or password');
+					
 					 redirect(base_url('auth/login'),'refresh');
 				}
 			}
 		}
 		else
 		{
+			
 			$data['title'] = 'Login';
 			$data['layout'] = 'themes/auth/login_page';
 			$this->load->view('themes/layout', $data);

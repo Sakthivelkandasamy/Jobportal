@@ -14,6 +14,7 @@ class Home extends CI_Controller {
 	// Index funciton will call bydefault
 	public function index()
 	{	
+	
 		$data['cities'] = $this->common_model->get_cities_list(); // get citities for dropdown
 		$data['cities_job'] = $this->home_model->get_cities_with_jobs(); //get those cities who have jobs
 		
