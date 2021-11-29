@@ -28,6 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<?php include('navbar.php'); ?>
 
 	<!--main content start-->
+	
 		<?php $this->load->view($layout); ?>
 	<!--main content end-->
 

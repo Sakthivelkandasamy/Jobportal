@@ -209,47 +209,61 @@
   <!-- Latest Jobs / End --> 
   
   <!-- Photo Section -->
-	<div class="utf-photo-section-block" data-background-image="<?= base_url(); ?>assets/new/images/section-background.jpg">
+	<div class="utf-photo-section-block" >
 		<div class="text-content white-font">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-8 col-md-12 col-sm-12">
-						<h2>Download Browse Hundreds of Jobs</h2>
-						<p>Lorem Ipsum is simply dummy text of printing and type setting industry. Lorem Ipsum been industry standard dummy text ever since, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic type setting, remaining essentially unchanged. It was popularised.</p>						
-						<ul class="utf-download-text">
-							<li>
-								<a href="#" title="Windows App" data-tippy-placement="top">
-									<i class="icon-line-awesome-windows"></i>
-									<span>Windows</span>
-									<p>Available Now</p>
-								</a>
-							</li>
-							<li>
-								<a href="#" title="App Store" data-tippy-placement="top">
-									<i class="icon-line-awesome-apple"></i>
-									<span>App Store</span>
-									<p>Available Now</p>
-								</a>
-							</li>
-							<li>
-								<a href="#" title="Google Play" data-tippy-placement="top">
-									<i class="icon-line-awesome-android"></i>
-									<span>Google Play</span>
-									<p>Get in On</p>
-								</a>
-							</li>
-						</ul>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-12">
-						<div class="download-img">
-							<img src="<?= base_url(); ?>assets/new/images/mockup3.png" alt="">
-						</div>
-					</div>
-				</div>
+        <div class="col-xl-12"> 
+          <div class="utf-section-headline-item centered margin-top-0 margin-bottom-40">
+            <span>Business Support Service</span>
+			<h3>How It Works?</h3>
+			<div class="utf-headline-display-inner-item">Business Support Service</div>
+			<p  style="color:#fff;" class="utf-slogan-text">Lorem Ipsum is simply dummy text printing and type setting industry Lorem Ipsum been industry standard dummy text ever since when unknown printer took a galley.</p>
+          </div>
+        </div>
+		<div class="col-xl-3 col-md-6 col-sm-12"> 
+          <div class="icon-box with-line" style="background:#837e7e"> 
+            <div class="utf-icon-box-circle">
+              <div class="utf-icon-box-circle-inner"> <i class="icon-line-awesome-user-secret"></i></div>
+            </div>
+            <h3>User Register</h3>
+            <p style="color:#fff;">Lorem Ipsum is simply dummy text the printing and type setting industry Lorem Ipsum has been industry.</p>
+          </div>
+        </div>
+		<div class="col-xl-3 col-md-6 col-sm-12"> 
+          <div class="icon-box with-line" style="background:#837e7e"> 
+            <div class="utf-icon-box-circle">
+              <div class="utf-icon-box-circle-inner"> <i class="icon-line-awesome-user-plus"></i></div>
+            </div>
+            <h3>Create Account</h3>
+            <p style="color:#fff;">Lorem Ipsum is simply dummy text the printing and type setting industry Lorem Ipsum has been industry.</p>
+          </div>
+        </div>
+		<div class="col-xl-3 col-md-6 col-sm-12"> 
+          <div class="icon-box" style="background:#837e7e"> 
+            <div class="utf-icon-box-circle">
+              <div class="utf-icon-box-circle-inner"> <i class="icon-line-awesome-edit"></i></div>
+            </div>
+            <h3>Search Jobs</h3>
+            <p style="color:#fff;">Lorem Ipsum is simply dummy text the printing and type setting industry Lorem Ipsum has been industry.</p>
+          </div>
+        </div>
+		<div class="col-xl-3 col-md-6 col-sm-12"> 
+          <div class="icon-box" style="background:#837e7e"> 
+            <div class="utf-icon-box-circle">
+              <div class="utf-icon-box-circle-inner"> <i class="icon-line-awesome-save"></i></div>
+            </div>
+            <h3>Save & Apply</h3>
+            <p style="color:#fff;">Lorem Ipsum is simply dummy text the printing and type setting industry Lorem Ipsum has been industry.</p>
+          </div>
+        </div>
+      </div>
 			</div>
 		</div>
 	</div>
   <!-- Photo Section / End --> 
+  
+ 
    <!-- Membership Plans -->
   <div class="section padding-top-65 padding-bottom-75">
     <div class="container">
@@ -344,57 +358,55 @@
   <!-- Membership Plans / End--> 
   
   <!-- Icon Boxes -->
-  <div class="section padding-top-65 padding-bottom-50">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-12"> 
-          <div class="utf-section-headline-item centered margin-top-0 margin-bottom-40">
-            <span>Business Support Service</span>
-			<h3>How It Works?</h3>
-			<div class="utf-headline-display-inner-item">Business Support Service</div>
-			<p class="utf-slogan-text">Lorem Ipsum is simply dummy text printing and type setting industry Lorem Ipsum been industry standard dummy text ever since when unknown printer took a galley.</p>
-          </div>
-        </div>
-		<div class="col-xl-3 col-md-6 col-sm-12"> 
-          <div class="icon-box with-line"> 
-            <div class="utf-icon-box-circle">
-              <div class="utf-icon-box-circle-inner"> <i class="icon-line-awesome-user-secret"></i></div>
-            </div>
-            <h3>User Register</h3>
-            <p>Lorem Ipsum is simply dummy text the printing and type setting industry Lorem Ipsum has been industry.</p>
-          </div>
-        </div>
-		<div class="col-xl-3 col-md-6 col-sm-12"> 
-          <div class="icon-box with-line"> 
-            <div class="utf-icon-box-circle">
-              <div class="utf-icon-box-circle-inner"> <i class="icon-line-awesome-user-plus"></i></div>
-            </div>
-            <h3>Create Account</h3>
-            <p>Lorem Ipsum is simply dummy text the printing and type setting industry Lorem Ipsum has been industry.</p>
-          </div>
-        </div>
-		<div class="col-xl-3 col-md-6 col-sm-12"> 
-          <div class="icon-box"> 
-            <div class="utf-icon-box-circle">
-              <div class="utf-icon-box-circle-inner"> <i class="icon-line-awesome-edit"></i></div>
-            </div>
-            <h3>Search Jobs</h3>
-            <p>Lorem Ipsum is simply dummy text the printing and type setting industry Lorem Ipsum has been industry.</p>
-          </div>
-        </div>
-		<div class="col-xl-3 col-md-6 col-sm-12"> 
-          <div class="icon-box"> 
-            <div class="utf-icon-box-circle">
-              <div class="utf-icon-box-circle-inner"> <i class="icon-line-awesome-save"></i></div>
-            </div>
-            <h3>Save & Apply</h3>
-            <p>Lorem Ipsum is simply dummy text the printing and type setting industry Lorem Ipsum has been industry.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  
   <!-- Icon Boxes / End --> 
+   <!-- Start Need Any Help -->
+  <section class="section padding-top-65 padding-bottom-75">
+	  <div class="container">
+		<div class="col-xl-12">
+			<div class="utf-section-headline-item centered margin-top-0 margin-bottom-40">
+				<span>Business Help Service</span>
+				<h3>Need Any Help?</h3>
+				<div class="utf-headline-display-inner-item">Business Help Service</div>
+				<p class="utf-slogan-text">Lorem Ipsum is simply dummy text printing and type setting industry Lorem Ipsum been industry standard dummy text ever since when unknown printer took a galley.</p>
+			</div>
+		</div>
+		<div class="row need-help-area justify-content-center">
+		  <div class="col-xl-4">
+			<div class="info-box-1">
+			  <div class="utf-icon-box-circle">
+				<div class="utf-icon-box-circle-inner"> <i class="icon-brand-rocketchat"></i></div>
+              </div>	
+			  <h4>Chat to Us Online</h4>
+			  <p>Chat to us online if you have any question. meet your lending needs.</p>
+			 
+			  <a href="javascript:void(0);" class="button utf-ripple-effect-dark utf-button-sliding-icon margin-top-10">Click Here to Chat <i class="icon-feather-chevrons-right"></i></a> 
+			</div>
+		  </div>
+		  <div class="col-xl-4">
+			<div class="info-box-1">
+			  <div class="utf-icon-box-circle">
+				<div class="utf-icon-box-circle-inner"> <i class="icon-feather-phone"></i></div>
+              </div>	
+			  <h4>Our Support Agent</h4>
+			  <p>Our support agent will work with you to meet your lending needs.</p>
+			  <a href="contact.html" class="button utf-ripple-effect-dark utf-button-sliding-icon margin-top-10">Contact Us <i class="icon-feather-chevrons-right"></i></a> 
+			</div>
+		  </div>
+		  <div class="col-xl-4">
+			<div class="info-box-1">
+			  <div class="utf-icon-box-circle">
+				<div class="utf-icon-box-circle-inner"> <i class="icon-brand-bimobject"></i></div>
+              </div> 
+			  <h4>Read Latest Blog Post</h4>
+			  <p>Visit our Blog page and know more about news and career tips</p>
+			  <a href="blog-right-sidebar.html" class="button utf-ripple-effect-dark utf-button-sliding-icon margin-top-10">Read Blog Post <i class="icon-feather-chevrons-right"></i></a> 
+			</div>
+		  </div>
+		</div>
+	  </div>
+  </section>
+  <!-- End Need Any Help -->
   <!-- Testimonials -->
   <div class="section gray padding-top-65 padding-bottom-65">
     <div class="container">
@@ -498,133 +510,13 @@
   </div>
   <!-- End Section Callout -->
   
-  <!-- Start Need Any Help -->
-  <section class="section padding-top-65 padding-bottom-75">
-	  <div class="container">
-		<div class="col-xl-12">
-			<div class="utf-section-headline-item centered margin-top-0 margin-bottom-40">
-				<span>Business Help Service</span>
-				<h3>Need Any Help?</h3>
-				<div class="utf-headline-display-inner-item">Business Help Service</div>
-				<p class="utf-slogan-text">Lorem Ipsum is simply dummy text printing and type setting industry Lorem Ipsum been industry standard dummy text ever since when unknown printer took a galley.</p>
-			</div>
-		</div>
-		<div class="row need-help-area justify-content-center">
-		  <div class="col-xl-4">
-			<div class="info-box-1">
-			  <div class="utf-icon-box-circle">
-				<div class="utf-icon-box-circle-inner"> <i class="icon-brand-rocketchat"></i></div>
-              </div>	
-			  <h4>Chat to Us Online</h4>
-			  <p>Chat to us online if you have any question.</p>
-			  <a href="javascript:void(0);" class="button utf-ripple-effect-dark utf-button-sliding-icon margin-top-10">Click Here to Chat <i class="icon-feather-chevrons-right"></i></a> 
-			</div>
-		  </div>
-		  <div class="col-xl-4">
-			<div class="info-box-1">
-			  <div class="utf-icon-box-circle">
-				<div class="utf-icon-box-circle-inner"> <i class="icon-feather-phone"></i></div>
-              </div>	
-			  <h4>Our Support Agent</h4>
-			  <p>Our support agent will work with you to meet your lending needs.</p>
-			  <a href="contact.html" class="button utf-ripple-effect-dark utf-button-sliding-icon margin-top-10">Contact Us <i class="icon-feather-chevrons-right"></i></a> 
-			</div>
-		  </div>
-		  <div class="col-xl-4">
-			<div class="info-box-1">
-			  <div class="utf-icon-box-circle">
-				<div class="utf-icon-box-circle-inner"> <i class="icon-brand-bimobject"></i></div>
-              </div> 
-			  <h4>Read Latest Blog Post</h4>
-			  <p>Visit our Blog page and know more about news and career tips</p>
-			  <a href="blog-right-sidebar.html" class="button utf-ripple-effect-dark utf-button-sliding-icon margin-top-10">Read Blog Post <i class="icon-feather-chevrons-right"></i></a> 
-			</div>
-		  </div>
-		</div>
-	  </div>
-  </section>
-  <!-- End Need Any Help -->
+ 
   
   <!-- Counters -->
-  <div class="section gradient_item_area padding-top-70 padding-bottom-75">
-    <div class="container">
-      <div class="row">
-	    <div class="col-xl-12">
-			<div class="utf-section-headline-item centered margin-top-0 margin-bottom-40">
-				<span>Success Business Award</span>
-				<h3>Our Success & Award</h3>
-				<div class="utf-headline-display-inner-item">Success Business Award</div>
-				<p class="utf-slogan-text">Lorem Ipsum is simply dummy text printing and type setting industry Lorem Ipsum been industry standard dummy text ever since when unknown printer took a galley.</p>
-			</div>
-		</div>
-        <div class="col-xl-12 counter_inner_block">
-		  <div class="utf-counters-container-aera"> 
-			<div class="col-xl-3">
-				<div class="utf-single-counter"> <i class="icon-feather-briefcase"></i>
-				  <div class="utf-counter-inner-item">
-					<h3><span class="counter">12,376</span></h3>
-					<span class="utf-counter-title">Live Jobs</span> 
-				  </div>
-				</div>
-			</div>
-			<div class="col-xl-3">	
-				<div class="utf-single-counter"> <i class="icon-feather-users"></i>
-				  <div class="utf-counter-inner-item">
-					<h3><span class="counter">89,562</span></h3>
-					<span class="utf-counter-title">Jobs Candidate</span> 
-				  </div>
-				</div>
-			</div>
-			<div class="col-xl-3">	
-				<div class="utf-single-counter"> <i class="icon-material-outline-textsms"></i>
-				  <div class="utf-counter-inner-item">
-					<h3><span class="counter">28,166</span></h3>
-					<span class="utf-counter-title">Active Resume</span> 
-				  </div>
-				</div>
-			</div>
-			<div class="col-xl-3">	
-				<div class="utf-single-counter"> <i class="icon-material-outline-location-city"></i>
-				  <div class="utf-counter-inner-item">
-					<h3><span class="counter">8,966</span></h3>
-					<span class="utf-counter-title">Companies</span> 
-				  </div>
-				</div>
-			</div>	
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+ 
   <!-- Counters / End --> 
   
-  <!-- Subscribe Block Start -->
-  <section class="utf_cta_area_item utf_cta_area2_block">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="utf_subscribe_block">
-                    <div class="col-xl-8 col-md-7">
-                        <div class="section-heading">
-                            <h2 class="utf_sec_title_item utf_sec_title_item2">Subscribe to Our Newsletter!</h2>
-                            <p class="utf_sec_meta">Subscribe to get latest updates and information.</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-5">
-                        <div class="contact-form-action">
-                            <form method="post">
-                                <i class="icon-material-baseline-mail-outline"></i>
-                                <input class="form-control" type="email" placeholder="Enter your email" required="">
-                                <button class="utf_theme_btn" type="submit">Subscribe</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-  </section>
-  <!-- Subscribe Block End -->
+  
   <!-- Logo Carousel -->
   <div class="col-xl-12"> &nbsp;</div>
     <div class="col-xl-12"> &nbsp;</div>

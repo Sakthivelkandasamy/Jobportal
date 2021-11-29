@@ -54,6 +54,7 @@
             </li>
             <li class=""><a href="<?= base_url('about'); ?>">About</a></li>
             <li class=""><a href="<?= base_url('company'); ?>">Companies</a></li> 
+			
 			<!---
             <li><a class="ticker-btn-nav btn_login mt-1" href="<?= ($this->uri->segment(1) == 'employers')?base_url('employers/auth/login'): base_url('auth/login') ?>"><i class="lnr lnr-user pr-1"></i> Login</a></li>
             --->

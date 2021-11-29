@@ -1,29 +1,38 @@
-<!-- start banner Area -->
-      <section class="banner-area relative" id="home">  
-        <div class="overlay overlay-bg"></div>
-        <div class="container">
-          <div class="row d-flex align-items-center justify-content-center">
-            <div class="about-content col-lg-12">
-              <h1 class="text-white">
-                About Us        
-              </h1> 
-              <p class="text-white"><a href="<?= base_url(); ?>">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href=""> About Us</a></p>
-            </div>                      
-          </div>
+ <!-- Titlebar -->
+  <div id="titlebar" class="gradient">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>About Us</h2>
+          <nav id="breadcrumbs">
+            <ul>
+              <li><a href="<?= base_url(); ?>">Home</a></li>
+			  <li>About Us</li>
+            </ul>
+          </nav>
         </div>
-      </section>
-      <!-- End banner Area -->  
-
-      <!-- Start contact-page Area -->
-      <section class="contact-page-area section-gap">
-        <div class="container">
-          <div class="row">
-           <div class="col-lg-12">
-            <h2 class="mb-3">About OnJob</h2>
-            <p>Lorem ipsum dolor sit amet, te mea mundi commune vulputate. Ad errem option sensibus has. Ad eam idque menandri necessitatibus. An mel scaevola scriptorem mediocritatem, illud viderer maiestatis id mei. Vim cibo nusquam disputando ex. No est putant ornatus, quo ut dico graeci.</p>
-            <p>Nec tota feugiat ea, timeam detracto ius id, perpetua suscipiantur mea ex. Sumo eruditi no mel, vel cu integre oportere voluptaria, sea ea euismod officiis luptatum. Cu dolor nonumes dissentiet mei, mei verterem sapientem no. Id nam ignota vidisse gubergren. Vel bonorum gloriatur ad, in pro utroque mentitum appareat, vim at omnium abhorreant. Pri id natum velit facilisi, no eos dicat altera commodo.</p>
-            <p>Lorem ipsum dolor sit amet, te mea mundi commune vulputate. Ad errem option sensibus has. Ad eam idque menandri necessitatibus. An mel scaevola scriptorem mediocritatem, illud viderer maiestatis id mei. Vim cibo nusquam disputando ex. No est putant ornatus, quo ut dico graeci.Nec tota feugiat ea, timeam detracto ius id, perpetua suscipiantur mea ex. Sumo eruditi no mel, vel cu integre oportere voluptaria, sea ea euismod officiis luptatum. Cu dolor nonumes dissentiet mei, mei verterem sapientem no. Id nam ignota vidisse gubergren. Vel bonorum gloriatur ad, in pro utroque mentitum appareat, vim at omnium abhorreant. Pri id natum velit facilisi, no eos dicat altera commodo.</p>
-          </div>
-        </div>  
-      </section>
-      <!-- End contact-page Area -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- About List Start --> 
+  <div class="section margin-top-65 padding-bottom-55">
+	  <div class="container">
+		<div class="row">
+		  <div class="col-xl-12 col-md-12">
+			<p>Lorem Ipsum is simply dummy text of printing and type setting industry. Lorem Ipsum been industry standard dummy text ever since, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions.</p>
+			<blockquote class="margin-top-20 margin-bottom-20">Lorem Ipsum is simply dummy text of printing and type setting industry. Lorem Ipsum been industry standard dummy text ever since, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the with the release of Letraset sheets containing Lorem Ipsum passages.</blockquote>
+				<p>Lorem Ipsum is simply dummy text of printing and type setting industry. Lorem Ipsum been industry standard dummy text ever since, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the with the release of Letraset sheets containing Lorem Ipsum passages</p>
+			<ul class="list-2">
+			  <li>Morbi mattis ullamcorper velit. Phasellus gravida semper nisi nullam vel sem.</li>
+			  <li>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.</li>
+			  <li>Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</li>
+			  <li>Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis.</li>
+			  <li>Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu.</li>
+			  <li>Donec elit libero, sodales nec, volutpat a, suscipit non, turpis Nullam sagittis.</li>
+			  <li>Pellentesque auctor neque nec urna. Proin sapien ipsum, porta a, auctor quis, euismod ut, mi.</li>
+			</ul>
+		  </div>          
+		</div>
+	  </div>
+  </div>

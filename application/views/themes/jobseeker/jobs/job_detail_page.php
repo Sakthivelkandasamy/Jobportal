@@ -1,24 +1,118 @@
-<!-- start banner Area -->
-<section class="banner-area relative" id="home">	
-	<div class="overlay overlay-bg"></div>
-	<div class="container">
-		<div class="row d-flex align-items-center justify-content-center">
-			<div class="about-content col-lg-12">
-				<h1 class="text-white">
-					Job Details				
-				</h1>	
-				<p class="text-white link-nav"><a href="<?= base_url(); ?>">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href=""> Job Details</a></p>
-			</div>											
-		</div>
-	</div>
-</section>
-<!-- End banner Area -->	
+<!-- Titlebar -->
+<style>
+.btn-primary{
+	background: #ff8a00;
+    color: #fff;
+    padding: 9px;
 
-<!-- Start post Area -->
-<section class="post-area section-gap">
-	<div class="container">
-		<div class="row d-flex">
-			<div class="col-lg-8 col-12">
+}
+.alert-success{
+	color: #ffff;
+    background: #388938;
+    padding: 7px;
+}
+.alert-danger{
+	color: #ffff;
+    background: red;
+    padding: 7px;
+}
+</style>
+  <div class="single-page-header" data-background-image="images/single-job.jpg">
+    <div class="container">
+      <div class="row">
+	  
+        <div class="col-md-12">
+          <div class="utf-single-page-header-inner-aera">
+            <div class="utf-left-side">
+             
+              <div class="utf-header-details">
+				<span class="dashboard-status-button utf-job-status-item green"><i class="icon-material-outline-business-center"></i> <?= $job_detail['job_type']; ?></span>
+				<ul>
+                  <li><?= $job_detail['company_name']; ?> <img class="flag" src="images/flags/af.svg" alt="" title="Afghanistan" data-tippy-placement="top"></li>				  
+                </ul>
+                <h3><?= $job_detail['job_title']; ?><span class="utf-verified-badge" title="Verified" data-tippy-placement="top"></span></h3>
+                <h5>
+				<i class="icon-feather-briefcase"></i><?= get_industry_name($job_detail['industry']); ?></h5>
+				<h5>
+				
+				<i class="icon-material-outline-account-balance-wallet"></i>$<?= $job_detail['min_salary']; ?> - $<?= $job_detail['max_salary']; ?> </h5>
+				<h5>
+				
+				<i class="icon-material-outline-location-on"></i><?= get_city_name($job_detail['city']); ?>, <?= get_country_name($job_detail['country']); ?></h5>
+				
+                
+              </div>
+            </div>
+            <div class="utf-right-side">
+              <div class="salary-box">
+				<a href="#small-dialog" class="apply-now-button popup-with-zoom-anim margin-top-0">Apply For Jobs <i class="icon-feather-chevron-right"></i></a> 
+				<a href="#" class="button save-job-btn margin-top-20">Save For Jobs <i class="icon-feather-chevron-right"></i></a> 				  
+			  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row"> 
+      <div class="col-xl-8 col-lg-8 utf-content-right-offset-aera">
+        <div class="utf-single-page-section-aera">
+		  <div class="job-description-image-aera">
+			  <img src="images/job-detail-inner.png" alt="" />
+		  </div>	
+		  <div class="utf-boxed-list-headline-item">
+            <h3><i class="icon-material-outline-description"></i> Jobs Description</h3>
+          </div>
+          <p><?= $job_detail['description']; ?></p>
+          <ul class="utf-job-deatails-content-item margin-bottom-30">
+			<li><i class="icon-feather-arrow-right"></i> <strong>Industry:</strong> <?= get_industry_name($job_detail['industry']); ?></li>
+		   <li><i class="icon-feather-arrow-right"></i> <strong>Total Positions:</strong> <?= $job_detail['total_positions']; ?></li>
+		   
+		   <li><i class="icon-feather-arrow-right"></i> <strong>Job Type:</strong> <?= $job_detail['job_type']; ?></li>
+		   
+		   <li><i class="icon-feather-arrow-right"></i> <strong>Salary:</strong> $<?= $job_detail['min_salary']; ?> - $<?= $job_detail['max_salary']; ?></li>
+		   
+		   <li><i class="icon-feather-arrow-right"></i> <strong>Education:</strong> <?= get_education_level($job_detail['education']); ?></li>
+		   <li><i class="icon-feather-arrow-right"></i> <strong>Location:</strong> <?= get_city_name($job_detail['city']); ?>, <?= get_country_name($job_detail['country']); ?></li>
+		   
+		  
+		   
+		   </ul>
+		   <div class="utf-single-page-section-aera">
+		  <div class="utf-boxed-list-headline-item">
+            <h3><i class="icon-material-outline-business-center"></i> Required Skills and Abilities</h3>
+          </div>
+          <ul class="utf-job-deatails-content-item">
+			<?php  $skills = explode("," , $job_detail['skills']);?>
+			<?php foreach($skills as $skill): ?>
+			<li><i class="icon-feather-arrow-right"></i><?= $skill; ?></li>
+			<?php endforeach; ?>
+			</ul>		  
+        </div>
+		  <div class="row">
+			<div class="col-xl-6 col-lg-6 col-sm-12">
+				<a href="#small-dialog" class="apply-now-button popup-with-zoom-anim margin-top-0">Apply Now <i class="icon-feather-chevron-right"></i></a>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-sm-12">
+				<a href="#" class="button save-job-btn">Get Job Alerts <i class="icon-feather-chevron-right"></i></a>
+			</div>
+		  </div>
+		  <div class="utf-detail-social-sharing margin-top-25">
+			<span><strong>Social Sharing:-</strong></span>
+			<ul class="margin-top-15">
+				<li><a href="#" title="Facebook" data-tippy-placement="top"><i class="icon-brand-facebook-f"></i></a></li>
+				<li><a href="#" title="Twitter" data-tippy-placement="top"><i class="icon-brand-twitter"></i></a></li>
+				<li><a href="#" title="LinkedIn" data-tippy-placement="top"><i class="icon-brand-linkedin-in"></i></a></li>
+				<li><a href="#" title="Google Plus" data-tippy-placement="top"><i class="icon-brand-google"></i></a></li>
+				<li><a href="#" title="Whatsapp" data-tippy-placement="top"><i class="icon-brand-whatsapp"></i></a></li>
+				<li><a href="#" title="Pinterest" data-tippy-placement="top"><i class="icon-brand-pinterest-p"></i></a></li>
+			</ul>
+		  </div>
+        </div>
+		<div class="col-lg-12 col-12">
 				<?php if($this->session->flashdata('applied_success')): ?>
 		          <div class="alert alert-success">
 		            <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
@@ -38,51 +132,7 @@
 		        </div>
 		      <?php endif; ?>
 			</div>
-			<div class="col-lg-8 post-list">
-				<div class="single-post d-flex flex-row">
-					<div class="details col-12">
-						<div class="title d-flex flex-row justify-content-between mb-2">
-							<div class="titles">
-								<a href="#"><h4><?= $job_detail['job_title']; ?></h4></a>
-								<h6><?= $job_detail['company_name']; ?></h6>					
-							</div>
-							<ul class="btns">
-								<li><a id="btn-apply" data-toggle="collapse" href="#collapseExample" role="button">Apply</a></li>
-							</ul>
-						</div>
-						<hr/>
-						<p class="address">
-							<strong>Industry:</strong> <?= get_industry_name($job_detail['industry']); ?>
-						</p>
-						<p class="address">
-							<strong>Total Positions:</strong> <?= $job_detail['total_positions']; ?>
-						</p>
-						<p class="address">
-							<strong>Job Type:</strong> <?= $job_detail['job_type']; ?>
-						</p>
-						<p class="address">
-							<strong>Salary:</strong> <?= $job_detail['min_salary']; ?>$ - <?= $job_detail['max_salary']; ?>$ 
-						</p>
-						<p class="address">
-							<strong>Education:</strong> <?= get_education_level($job_detail['education']); ?>
-						</p>
-						<p class="address">
-							<strong>Location:</strong> <?= get_city_name($job_detail['city']); ?>, <?= get_country_name($job_detail['country']); ?>
-						</p>
-						<p class="description">
-							<?= $job_detail['description']; ?>
-						</p>
-						<?php  $skills = explode("," , $job_detail['skills']);?>
-						<ul class="tags">
-							<?php foreach($skills as $skill): ?>
-							<li>
-								<a href="#"><?= $skill; ?></a>
-							</li>
-							<?php endforeach; ?>
-						</ul>
-					</div>
-				</div>	
-				<div id="apply-block">
+		<div id="apply-block">
 					<div class="collapse" id="collapseExample">
 						<div class="card card-body">
 							<h4 class="card-title">Apply for this job</h4>
@@ -108,7 +158,7 @@
 								 ?>
 
 								<?php if($this->session->userdata('is_user_login') == true): ?>
-								    <button type="submit" name="submit" value="submit" class="btn btn-primary btn-block">Send Application</button>
+								    <button type="submit" name="submit" value="submit" class="btn btn-primary btn-block ">Send Application</button>
 
 								<?php elseif($this->session->userdata('is_employer_login') == true): ?>
 								    <a href="<?= base_url('auth/login'); ?>" class="btn btn-primary btn-block">Please login as JobSeeker</a>
@@ -120,29 +170,43 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col-lg-4 sidebar">
-				<div class="single-slidebar">
-		            <h4>Jobs by Location</h4>
-		            <ul class="cat-list">
-		              <?php foreach($cities_job as $city):?>
-		               <li><a class="justify-content-between d-flex" href="<?= base_url('jobs/location/'.get_city_slug($city['city_id'])); ?>"><p><?= get_city_name($city['city_id']); ?></p><span><?= $city['total_jobs']; ?></span></a></li>
-		             <?php endforeach; ?>
-		           </ul>
-		         </div>													
-			</div>
-		</div>
-	</div>	
-</section>
-<!-- End post Area -->
-
-<script>
-    $(document).ready(function (){
-        $("#btn-apply").click(function (){
-            $('html, body').animate({
-                scrollTop: $("#apply-block").offset().top-90
-            }, 1000);
-        });
-    });
-</script>
-
+		
+		
+		
+		
+		
+       
+		
+      </div>
+      
+      <!-- Sidebar -->
+      <div class="col-xl-4 col-lg-4">
+        <div class="utf-sidebar-container-aera"> 
+		 
+		  
+          <div class="utf-sidebar-widget-item">
+            <div class="utf-job-overview">
+              <div class="utf-job-overview-headline">Jobs by Location</div>
+              <div class="utf-job-overview-inner">
+                <ul>
+                   <?php foreach($cities_job as $city):?>
+				  <li style="padding: 12px 54px;"> 
+				    <a class="justify-content-between d-flex" href="<?= base_url('jobs/location/'.get_city_slug($city['city_id'])); ?>"><i class="icon-material-outline-location-on"></i> <span><?= get_city_name($city['city_id']); ?></span><span><?= $city['total_jobs']; ?></span></a>
+                   
+                  </li>
+				 <?php endforeach; ?>
+                </ul>
+              </div>			  
+            </div>			
+          </div>
+          
+         
+		  
+		 
+		  
+		 
+        </div>
+      </div>
+    </div>
+  </div>
+  
