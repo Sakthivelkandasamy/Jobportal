@@ -18,6 +18,7 @@ class Myjobs extends CI_Controller {
 		$data['jobs'] = $this->myjob_model->get_applied_jobs(); // Fetching Applied jobs
 
 		$data['user_sidebar'] = 'themes/jobseeker/user_sidebar'; // load sidebar for user
+		$data['leftsidebar'] = 'themes/jobseeker/leftsidebar';
 		$data['title'] = 'Applied Jobs';
 		$data['layout'] = 'themes/jobseeker/my_jobs/applied_job_page';
 		$this->load->view('themes/layout', $data);
@@ -33,6 +34,7 @@ class Myjobs extends CI_Controller {
 		$data['jobs'] = $this->myjob_model->get_matching_jobs($skills);
 
 		$data['user_sidebar'] = 'themes/jobseeker/user_sidebar'; // load sidebar for user
+		$data['leftsidebar'] = 'themes/jobseeker/leftsidebar';
 		$data['title'] = 'Matching Jobs';
 		$data['layout'] = 'themes/jobseeker/my_jobs/matching_jobs_page';
 		$this->load->view('themes/layout', $data);

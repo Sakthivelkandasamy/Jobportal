@@ -16,7 +16,8 @@ class Profile extends CI_Controller {
 	public function index()
 	{		
 		$user_id = $this->session->userdata('user_id');
-
+		$data['leftsidebar'] = 'themes/jobseeker/leftsidebar';
+		
 		if ($this->input->post('update'))
 		{
 			$this->form_validation->set_rules('firstname','firstname','trim|required|min_length[3]');

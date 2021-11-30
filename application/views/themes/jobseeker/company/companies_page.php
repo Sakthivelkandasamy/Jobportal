@@ -1,3 +1,10 @@
+<style>
+.utf-company-inner-alignment{
+background: #ff8a00;
+    width: 80%;
+    height: 72%;
+}
+</style>
 <!-- Titlebar -->
 <div id="titlebar" class="gradient">
     <div class="container">
@@ -27,7 +34,7 @@
 				
 					<div class="col-xl-4 col-md-6 col-sm-12" style="width:30%;">
 						<div class="utf-company-inner-alignment">
-							<a href="<?= base_url('company/'.$company['company_slug']); ?>" class="company">
+							<a href="<?= base_url('company/'.$company['company_slug']); ?>" class="company" style="width: 70%;">
 								<img src="<?= base_url().$company['company_logo']; ?>" alt="">
 							</a>
 						</div>						

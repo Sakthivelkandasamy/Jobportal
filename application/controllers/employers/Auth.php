@@ -12,7 +12,7 @@ class Auth extends CI_Controller {
 
 	//------------------------------------------------------------------
 	public function login(){
-		if ($this->input->post('login')) {
+		if ($this->input->post())  {
 
 			$this->form_validation->set_rules('email','email','trim|required|min_length[5]|valid_email' );
 			$this->form_validation->set_rules('password','password','trim|required|min_length[3]');

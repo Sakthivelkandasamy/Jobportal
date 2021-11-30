@@ -33,8 +33,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<!--main content end-->
 
 	<!-- Footer File-->
+	
+	<?php if (!$this->session->userdata('is_user_login') && !$this->session->userdata('is_employer_login')){ ?>
 	<?php include('footer.php'); ?>
-
+	<?php } ?>
 
 <!-- Scripts --> 
 <script src="<?= base_url(); ?>assets/new/js/jquery-3.3.1.min.js"></script> 

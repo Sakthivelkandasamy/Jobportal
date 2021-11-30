@@ -13,6 +13,8 @@ class Setting extends CI_Controller {
 	//-------------------------------------------------------------------------------
 	public function change_password()
 	{	
+	
+		$data['leftsidebar'] = 'themes/jobseeker/leftsidebar';
 		if ($this->input->post('submit')) {
 
 			$emp_id = $this->session->userdata('employer_id');
@@ -52,6 +54,7 @@ class Setting extends CI_Controller {
 		else{
 			$data['emp_sidebar'] = 'themes/employers/emp_sidebar'; // load sidebar for user
 			$data['layout'] = 'themes/employers/setting/change_password_page';
+			
 			$this->load->view('themes/layout', $data);
 		}
 	}

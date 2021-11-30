@@ -1,3 +1,10 @@
+<style>
+.utf-company-inner-alignment{
+background: #ff8a00;
+    width: 80%;
+    height: 72%;
+}
+</style>
 <!-- Titlebar -->
 <div id="titlebar" class="gradient">
     <div class="container">
@@ -29,7 +36,7 @@
 						<div class="utf-company-inner-alignment" style="background: #ff8a00;">
 							<a href="<?= base_url('jobs/category/'.get_category_slug($category['category_id'])); ?>" class="company">
 								<span class="company-logo"><img src="<?= base_url(''); ?>assets/img/o1.png" alt=""></span>
-								<h3 style="color: #fff;"><?= get_category_name($category['category_id']); ?></h3>
+								<h4 style="color: #fff;"><?= get_category_name($category['category_id']); ?></h4>
 								<div  style="color: #fff;">(<?= $category['total_jobs']; ?>) Openings</div>
 							</a>
 						</div>						

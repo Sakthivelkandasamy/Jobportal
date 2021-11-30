@@ -13,6 +13,7 @@ class Setting extends CI_Controller {
 	//-------------------------------------------------------------------------------
 	public function change_password()
 	{	
+		$data['leftsidebar'] = 'themes/jobseeker/leftsidebar';
 		if ($this->input->post('submit')) {
 
 			$user_id = $this->session->userdata('user_id');

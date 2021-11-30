@@ -15,6 +15,7 @@ class Profile extends CI_Controller{
 
 		$data['countries'] = $this->common_model->get_countries_list(); 
 		$data['cities'] = $this->common_model->get_cities_list(); 
+		$data['leftsidebar'] = 'themes/jobseeker/leftsidebar';
 
 		if ($this->input->post('update')) {
 			$emp_id = $this->session->userdata('employer_id');

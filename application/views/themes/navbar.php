@@ -67,16 +67,32 @@
         </div>
         
         <div class="utf-right-side"> 
-		<?php if (!$this->session->userdata('is_user_login')): ?>   
-		  <div class="utf-header-widget-item"> 
-		  <a href="<?= base_url('auth/login') ?>" class="log-in-button"><i class="icon-feather-log-in"></i> <span>Sign In</span></a> 
+		<?php if ($this->session->userdata('is_employer_login')){ ?>   
+			<div class="utf-header-widget-item"> 
+            <div class="utf-header-notifications user-menu">
+              <div class="utf-header-notifications-trigger user-profile-title"> 
+				<a href="#">
+					<div class="user-avatar status-online"><img src="<?= base_url(); ?>assets/img/user.png" alt=""> </div>	
+					<div class="user-name">Hi, <?= $this->session->userdata('username'); ?>!</div>	
+                </a> 
+			  </div>
+              
+			  <div class="utf-header-notifications-dropdown-block"> 
+				<ul class="utf-user-menu-dropdown-nav">
+				<!---
+                  <li><a href="<?= base_url('profile'); ?>"><i class="icon-feather-user"></i> My Profile</a></li>
+                  <li><a href="<?= base_url('myjobs'); ?>"><i class="icon-line-awesome-user-secret"></i> My Applications</a></li>
+				  <li><a href="<?= base_url('myjobs/matching'); ?>"><i class="icon-material-outline-group"></i> Matching Jobs</a></li>
+                  <li><a href="<?= base_url('setting/change_password'); ?>"><i class="icon-material-outline-star-border"></i>Change Password</a></li>
+					----->
+				 <li><a href="<?= base_url('auth/logout')?>"><i class="icon-material-outline-power-settings-new"></i> Logout</a></li>
+                </ul>
+              </div>
+			 
+            </div>
+          </div>
 		  
-		  <!----
-		  <a href="#utf-signin-dialog-block" class="popup-with-zoom-anim log-in-button"><i class="icon-feather-log-in"></i> <span>Sign In</span></a> 
-		  
-		  --->
-		  </div>	
-		 <?php else: ?> 
+		<?php }else if ($this->session->userdata('is_user_login')){  ?> 
 		  <div class="utf-header-widget-item"> 
             <div class="utf-header-notifications user-menu">
               <div class="utf-header-notifications-trigger user-profile-title"> 
@@ -85,19 +101,27 @@
 					<div class="user-name">Hi, <?= $this->session->userdata('username'); ?>!</div>	
                 </a> 
 			  </div>
+			  
               <div class="utf-header-notifications-dropdown-block"> 
 				<ul class="utf-user-menu-dropdown-nav">
+				<!----
                   <li><a href="<?= base_url('profile'); ?>"><i class="icon-feather-user"></i> My Profile</a></li>
                   <li><a href="<?= base_url('myjobs'); ?>"><i class="icon-line-awesome-user-secret"></i> My Applications</a></li>
 				  <li><a href="<?= base_url('myjobs/matching'); ?>"><i class="icon-material-outline-group"></i> Matching Jobs</a></li>
                   <li><a href="<?= base_url('setting/change_password'); ?>"><i class="icon-material-outline-star-border"></i>Change Password</a></li>
-				  <li><a href="<?= base_url('auth/logout')?>"><i class="icon-material-outline-power-settings-new"></i> Logout</a></li>
+				----->
+				 <li><a href="<?= base_url('auth/logout')?>"><i class="icon-material-outline-power-settings-new"></i> Logout</a></li>
                 </ul>
               </div>
+			 
             </div>
           </div>
-		 
-		<?php endif; ?>   
+		<?php }else {  ?> 
+		 <div class="utf-header-widget-item"> 
+		  <a href="<?= base_url('auth/login') ?>" class="log-in-button"><i class="icon-feather-log-in"></i> <span>Sign In</span></a> 
+		
+		  </div>
+		<?php } ?>   
           <span class="mmenu-trigger">
 			<button class="hamburger utf-hamburger-collapse-item" type="button"> <span class="utf-hamburger-box-item"> <span class="utf-hamburger-inner-item"></span> </span> </button>
           </span> 

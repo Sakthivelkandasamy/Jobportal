@@ -1,49 +1,35 @@
-	<!-- start banner Area -->
-	<section class="banner-area relative" id="home">	
-		<div class="overlay overlay-bg"></div>
-		<div class="container">
-			<div class="row d-flex align-items-center justify-content-center">
-				<div class="about-content col-lg-12">
-					<h1 class="text-white">
-						Company Details				
-					</h1>	
-					<p class="text-white link-nav"><a href="<?= base_url(); ?>">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href=""> Company Details</a></p>
-				</div>											
+<div class="utf-dashboard-container-aera"> 
+    
+    <!-- Dashboard Sidebar / End --> 
+    <?php $this->load->view($leftsidebar); ?>
+    <!-- Dashboard Content -->
+    <div class="utf-dashboard-content-container-aera" data-simplebar>
+	  <div id="dashboard-titlebar" class="utf-dashboard-headline-item">
+		<div class="row">
+			<div class="col-xl-12">	
+				<h3>Company Details	</h3>
+				<nav id="breadcrumbs">
+					<ul>
+					  <li><a href="<?= base_url(); ?>">Home</a></li>
+					  <li><a href="<?= base_url(); ?>">Dashboard</a></li>
+					  <li>Company Details	</li>
+					</ul>
+				</nav>
 			</div>
-		</div>
-	</section>
-	<!-- End banner Area -->	
-
-	<!-- Start post Area -->
-	<section class="post-area section-gap">
-		<div class="container">
-			<div class="row justify-content-center d-flex">
-				<div class="col-lg-4 sidebar">
-					<?php $this->load->view($emp_sidebar); ?>					
-				</div>
-				<div class="col-lg-8 post-list">
-					
-					<?php if ($this->session->flashdata('file_error')) {
-		              echo '<div class="alert alert-danger">' . $this->session->flashdata('file_error') . '</div>';
-		            } ?>
-
-					<?php
-					if ($this->session->flashdata('update_success')) {
-						echo '<div class="alert alert-success">' . $this->session->flashdata('update_success') . '</div>';
-					}
-					if($this->session->flashdata('error_update')){
-						echo '<div class="alert alert-danger">' . $this->session->flashdata('error_update') . '</div>';
-					}
-					?>
-					<?php $attributes = array('id' => 'update_employers_form', 'method' => 'post' , 'class' => 'form_horizontal'); ?>
+		</div>		
+      </div>
+	  
+      <div class="utf-dashboard-content-inner-aera"> 
+	 <?php $attributes = array('id' => 'update_employers_form', 'method' => 'post' , 'class' => 'form_horizontal'); ?>
 					<?php echo form_open_multipart('employers/company',$attributes);?>
-
-					<div class="profile_job_content col-lg-12">
-						<div class="headline">
-							<h3> Company Details</h3>
-						</div>
-						<div class="profile_job_detail">
-							<div class="row">
+        <div class="row"> 
+          <div class="col-xl-6">
+            <div class="dashboard-box margin-top-0 margin-bottom-30"> 
+              <div class="headline">
+                <h3>Company Details</h3>
+              </div>
+              <div class="content with-padding padding-bottom-0">
+                <div class="row">
 								<div class="col-md-12 col-sm-12">
 									<div class="submit-field">
 										<h5>Company Logo *</h5>
@@ -54,7 +40,7 @@
 										<input type="hidden" name="old_logo" value="<?= $company_info['company_logo']; ?>">
 									</div>
 								</div>
-								<div class="col-md-6 col-sm-12">
+								<div class="col-md-12 col-sm-12">
 									<div class="submit-field">
 										<h5>Company Name *</h5>
 										<input class="form-control" type="text" name="company_name" value="<?= $company_info['company_name']; ?>" placeholder="Company Name">
@@ -62,25 +48,25 @@
 										<input class="form-control" type="hidden" name="company_id" value="<?= $company_info['id']; ?>" placeholder="Company Name">
 									</div>
 								</div>
-								<div class="col-md-6 col-sm-12">
+								<div class="col-md-12 col-sm-12">
 									<div class="submit-field">
 										<h5>Email *</h5>
 										<input type="email" name="email" value="<?= $company_info['email']; ?>"  class="form-control" placeholder="example@example.com">
 									</div>
 								</div>
-								<div class="col-md-6 col-sm-12">
+								<div class="col-md-12 col-sm-12">
 									<div class="submit-field">
 										<h5>Phone *</h5>
 										<input class="form-control" type="tel" name="phone_no" value="<?= $company_info['phone_no']; ?>" placeholder="123456789">
 									</div>
 								</div>
-								<div class="col-md-6 col-sm-12">
+								<div class="col-md-12 col-sm-12">
 									<div class="submit-field">
 										<h5>Website:</h5>
 										<input class="form-control" type="text" name="website" value="<?= $company_info['website']; ?>" placeholder="www.example.com" >
 									</div>
 								</div>
-								<div class="col-md-6 col-sm-12">
+								<div class="col-md-12 col-sm-12">
 									<div class="submit-field">
 										<h5>Category *</h5>
 										<select class="form-control" name="category">
@@ -94,13 +80,13 @@
 												</select>
 											</div>
 										</div>
-										<div class="col-md-6 col-sm-12">
+										<div class="col-md-12 col-sm-12">
 											<div class="submit-field">
 												<h5>Founded Date *</h5>
 												<input type="date" name="founded_date" value="<?= $company_info['founded_date']; ?>" class="form-control" >
 											</div>
 										</div>
-										<div class="col-md-6 col-sm-12">
+										<div class="col-md-12 col-sm-12">
 											<div class="submit-field">
 												<h5>Organization Type *</h5>
 												<select name="org_type"  class="form-control" >
@@ -111,7 +97,7 @@
 												</select>
 											</div>
 										</div>
-										<div class="col-md-6 col-sm-12">
+										<div class="col-md-12 col-sm-12">
 											<div class="submit-field">
 												<h5>No. of Employers *</h5>
 												<select name="no_of_employers" class="form-control">
@@ -131,15 +117,21 @@
 											</div>
 										</div>
 									</div>
-								</div>
-							</div>
-
-							<div class="profile_job_content col-lg-12 mt-5">
-								<div class="headline">
-									<h3>Address / Location</h3>
-								</div>
-								<div class="profile_job_detail">
-									<div class="row">
+				 </div>
+            </div>			
+          </div>
+          
+          <div class="col-xl-6">
+		  
+            <div id="test1" class="dashboard-box margin-top-0"> 
+              <div class="headline">
+                <h3>Address / Location</h3>
+              </div>
+              <div class="content with-padding">
+               <div class="profile_job_content col-lg-12 mt-5">
+              
+              <div class="profile_job_detail">
+                <div class="row">
 										<div class="col-md-6 col-sm-12">
 											<div class="submit-field">
 												<h5>Country *</h5>
@@ -181,15 +173,15 @@
 															</div>
 														</div>
 													</div>
-												</div>
-											</div>	
+              </div>
+            </div>  
 
-											<div class="profile_job_content col-lg-12 mt-5">
-												<div class="headline">
-													<h3>Company Social</h3>
-												</div>
-												<div class="profile_job_detail">
-													<div class="row">
+            <div class="profile_job_content col-lg-12 mt-5">
+              
+                <h3>Company Social</h3>
+             
+              <div class="profile_job_detail">
+                <div class="row">
 														<div class="col-md-6 col-sm-12">
 															<div class="submit-field">
 																<h5>Facebook</h5>
@@ -227,16 +219,26 @@
 															</div>
 														</div>
 													</div>
-												</div>
-											</div>
-											<div class="add_job_btn col-lg-12 mt-5">
-												<div class="submit-field">
-													<input type="submit" name="update" value="Update" class="job_detail_btn">
-												</div>
-											</div>	
-											<?php echo form_close(); ?>														
-										</div>
-									</div>
-								</div>	
-							</section>
-	<!-- End post Area -->
+              </div>
+            </div> 
+			
+			<div class="add_job_btn col-lg-12 mt-5">
+				<div class="submit-field">
+					<input type="submit" name="update" value="Update" class="job_detail_btn">
+				</div>
+			</div>	
+			</div>			  
+            </div>
+          </div>          
+        </div>
+         <?php echo form_close();?>    
+        <!-- Footer -->
+        <div class="utf-dashboard-footer-spacer-aera"></div>
+        <div class="utf-small-footer margin-top-15">
+          <div class="utf-small-footer-copyrights">Copyright &copy; 2021 All Rights Reserved.</div>
+        </div>
+      </div>
+	  
+    </div>
+    <!-- Dashboard Content / End -->     
+  </div>  

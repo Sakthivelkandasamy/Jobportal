@@ -1,80 +1,83 @@
-    <!-- start banner Area -->
-    <section class="banner-area relative" id="home">  
-      <div class="overlay overlay-bg"></div>
-      <div class="container">
-        <div class="row d-flex align-items-center justify-content-center">
-          <div class="about-content col-lg-12">
-            <h1 class="text-white">
-              Canidate Profile        
-            </h1> 
-            <p class="text-white link-nav"><a href="<?= base_url(); ?>">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href=""> Canidate Profile</a></p>
-          </div>                      
-        </div>
+<div class="utf-dashboard-container-aera"> 
+    
+    <!-- Dashboard Sidebar / End --> 
+    <?php $this->load->view($leftsidebar); ?>
+    <!-- Dashboard Content -->
+    <div class="utf-dashboard-content-container-aera" data-simplebar>
+	  <div id="dashboard-titlebar" class="utf-dashboard-headline-item">
+		<div class="row">
+			<div class="col-xl-12">	
+				<h3>My Profile</h3>
+				<nav id="breadcrumbs">
+					<ul>
+					  <li><a href="<?= base_url(); ?>">Home</a></li>
+					  <li><a href="<?= base_url(); ?>">Dashboard</a></li>
+					  <li>My Profile</li>
+					</ul>
+				</nav>
+			</div>
+		</div>		
       </div>
-    </section>
-    <!-- End banner Area -->  
-
-    <!-- Start post Area -->
-    <section class="post-area section-gap">
-      <div class="container">
-        <div class="row justify-content-center d-flex">
-          <div class="col-lg-4 sidebar">            
-            <?php $this->load->view($user_sidebar); ?>
-          </div>
-          <div class="col-lg-8 post-list">
-
-            <?php if ($this->session->flashdata('file_error')) {
-              echo '<div class="alert alert-danger">' . $this->session->flashdata('file_error') . '</div>';
-            } ?>
-
-            <?php if ($this->session->flashdata('error_update')) {
-              echo '<div class="alert alert-danger">' . $this->session->flashdata('error_update') . '</div>';
-            } ?>
-
-            <?php if ($this->session->flashdata('update_success')) {
-              echo '<div class="alert alert-success">' . $this->session->flashdata('update_success') . '</div>';
-            } ?>
-
-            <?php $attributes = array('id' => 'update_user_form', 'method' => 'post' , 'class' => 'form_horizontal'); ?>
+	  
+      <div class="utf-dashboard-content-inner-aera"> 
+	  <?php $attributes = array('id' => 'update_user_form', 'method' => 'post' , 'class' => 'form_horizontal'); ?>
             <?php echo form_open_multipart('profile',$attributes);?>
-
-            <div class="profile_job_content col-lg-12">
+        <div class="row"> 
+          <div class="col-xl-6">
+            <div class="dashboard-box margin-top-0 margin-bottom-30"> 
               <div class="headline">
-                <h3> Basic Information</h3>
+                <h3>My Profile Details</h3>
               </div>
-              <div class="profile_job_detail">
+              <div class="content with-padding padding-bottom-0">
                 <div class="row">
-                  <div class="col-md-6 col-sm-12">
-                    <div class="submit-field">
-                      <h5>First Name *</h5>
-                      <input class="form-control" type="text" name="firstname" value="<?= $user_info['firstname']  ?>" placeholder="John Wick">
-                    </div>
-                  </div>
-                  <div class="col-md-6 col-sm-12">
-                    <div class="submit-field">
-                      <h5>Last Name *</h5>
-                      <input class="form-control" type="text" name="lastname" value="<?= $user_info['lastname']  ?>" placeholder="John Wick">
-                    </div>
-                  </div>
-                  <div class="col-md-6 col-sm-12">
-                    <div class="submit-field">
-                      <h5>Email *</h5>
-                      <input class="form-control" type="email" name="email" value="<?= $user_info['email']  ?>" placeholder="example@example.com">
-                    </div>
-                  </div>
-                  <div class="col-md-6 col-sm-12">
+                  <div class="col">
+                    <div class="row">
+					  <div class="col-xl-12">
+						 <?php if ($this->session->flashdata('file_error')) {
+							  echo '<div class="alert alert-danger">' . $this->session->flashdata('file_error') . '</div>';
+							} ?>
+
+							<?php if ($this->session->flashdata('error_update')) {
+							  echo '<div class="alert alert-danger">' . $this->session->flashdata('error_update') . '</div>';
+							} ?>
+
+							<?php if ($this->session->flashdata('update_success')) {
+							  echo '<div class="alert alert-success">' . $this->session->flashdata('update_success') . '</div>';
+							} ?>
+						
+					  </div>	
+                      <div class="col-xl-12 col-md-6 col-sm-6">
+                        <div class="utf-submit-field">
+                          <h5>First Name *
+						  </h5>
+						  <input class="form-control" type="text" name="firstname" value="<?= $user_info['firstname']  ?>" placeholder="John Wick">
+                        </div>
+                      </div>
+					   <div class="col-xl-12 col-md-6 col-sm-6">
+                        <div class="utf-submit-field">
+                          <h5>Last Name *</h5>
+						  <input class="form-control" type="text" name="lastname" value="<?= $user_info['lastname']  ?>" placeholder="John Wick">
+                        </div>
+                      </div>
+					 <div class="col-xl-12 col-md-6 col-sm-6">
+						<div class="submit-field">
+						  <h5>Email *</h5>
+						  <input class="form-control" type="email" name="email" value="<?= $user_info['email']  ?>" placeholder="example@example.com">
+						</div>
+					  </div>
+					  <div class="col-xl-12 col-md-6 col-sm-6">
                     <div class="submit-field">
                       <h5>Date of Birth:</h5>
                       <input class="form-control" type="date" name="dob" value="<?= $user_info['dob']  ?>">
                     </div>
                   </div>
-                  <div class="col-md-6 col-sm-12">
+				 <div class="col-xl-12 col-md-6 col-sm-6">
                     <div class="submit-field">
                       <h5>Phone *</h5>
                       <input class="form-control" type="tel" name="mobile_no" value="<?= $user_info['mobile_no']  ?>" placeholder="444 5555 66666">
                     </div>
                   </div>
-                  <div class="col-md-6 col-sm-12">
+                    <div class="col-xl-12 col-md-6 col-sm-6">
                     <div class="submit-field">
                       <h5>Nationality *</h5>
                       <select name="nationality" class="form-control">
@@ -88,7 +91,7 @@
                       </select>
                     </div>
                   </div>
-                  <div class="col-md-6 col-sm-12">
+                 <div class="col-xl-12 col-md-6 col-sm-6">
                     <div class="submit-field">
                       <h5>Category *</h5>
                       <select class="form-control" name="category">
@@ -102,26 +105,37 @@
                       </select>
                     </div>
                   </div>
-                  <div class="col-md-6 col-sm-12">
+                  <div class="col-xl-12 col-md-6 col-sm-6">
                     <div class="submit-field">
                       <h5>Job Title *</h5>
                       <input class="form-control" type="text" name="job_title" value="<?= $user_info['job_title']; ?>" placeholder="web developer & designer">
                     </div>
                   </div>
-                  <div class="col-md-12 col-sm-12">
+                  <div class="col-xl-12 col-md-6 col-sm-6">
                     <div class="submit-field">
                       <h5>Description *</h5>
                       <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Nulla bibendum commodo rhoncus. Sed mattis magna nunc, ac varius quam pharetra vitae. Praesent vitae ipsum eu magna pretium aliquam. Curabitur interdum quis velit non tincidunt.Donec pretium gravida erat, a faucibus velit egestas eget."><?= $user_info['description']; ?></textarea>
                     </div>
+                  </div>  
+                    
+					  
+					  					  
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div class="profile_job_content col-lg-12 mt-5">
+				 </div>
+            </div>			
+          </div>
+          
+          <div class="col-xl-6">
+		  
+            <div id="test1" class="dashboard-box margin-top-0"> 
               <div class="headline">
                 <h3>Address / Location</h3>
               </div>
+              <div class="content with-padding">
+               <div class="profile_job_content col-lg-12 mt-5">
+              
               <div class="profile_job_detail">
                 <div class="row">
                   <div class="col-md-6 col-sm-12">
@@ -169,9 +183,9 @@
             </div>  
 
             <div class="profile_job_content col-lg-12 mt-5">
-              <div class="headline">
+              
                 <h3>Other Information</h3>
-              </div>
+             
               <div class="profile_job_detail">
                 <div class="row">
                   <div class="col-md-6 col-sm-12">
@@ -245,7 +259,7 @@
                       <input type="tel" name="skills" value="<?= $user_info['skills']  ?>" class="form-control" placeholder="eg, html, css, php, javascript">
                     </div>
                   </div>
-                  <div class="col-md-6 col-sm-12">
+                  <div class="col-md-12 col-sm-12">
                     <div class="submit-field">
                         <h5>Resume * <small>(Maximum file size is 100kb, pdf, docx)</small></h5>
                         <input type="file" name="userfile" value="" class="onjob-upload">
@@ -255,17 +269,26 @@
                         <?php endif; ?>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="add_job_btn col-lg-12 mt-5">
+				  <div class="add_job_btn col-lg-12 mt-5">
               <div class="submit-field">
                 <input type="submit" class="btn job_detail_btn" name="update" value="Update">
              </div>
-           </div>   
-           <?php echo form_close();?>                           
-         </div>
-       </div>
-     </div>  
-   </section>
-   <!-- End post Area -->    
+           </div>
+                </div>
+              </div>
+            </div> 
+			</div>			  
+            </div>
+          </div>          
+        </div>
+         <?php echo form_close();?>    
+        <!-- Footer -->
+        <div class="utf-dashboard-footer-spacer-aera"></div>
+        <div class="utf-small-footer margin-top-15">
+          <div class="utf-small-footer-copyrights">Copyright &copy; 2021 All Rights Reserved.</div>
+        </div>
+      </div>
+	  
+    </div>
+    <!-- Dashboard Content / End -->     
+  </div>  
