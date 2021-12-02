@@ -13,12 +13,20 @@ class Job_Model extends CI_Model{
 	//---------------------------------------------------
 	// Count total users
 	public function count_all_search_result($search=null)
-	{
+	{	
+	
+		
 		// search URI parameters
 		unset($search['p']); //unset pagination parameter form search
-		if(!empty($search))
-			$this->db->where($search);
-
+		$search['sort'] = '1';
+		if(isset($search['sort'])){
+			$search['sort'] = $search['sort'];
+		}
+		if(!empty($search)){
+			if($search['sort']==''){
+				$this->db->where($search);
+			}
+		}
 		if(!empty($search['job_title'])){
 			$search_text = explode('-', $search['job_title']);
 			foreach($search_text as $search){
@@ -27,14 +35,28 @@ class Job_Model extends CI_Model{
 			}
 		}
 		$this->db->where('is_status', 'active');
-		$this->db->order_by('created_date','desc');
+		if(!empty($search['sort'])){
+			if($search['sort']==1){
+				$this->db->order_by('job_title','asc');
+			}else if($search['sort']==2){
+				$this->db->order_by('job_title','desc');
+			}else if($search['sort']==3){
+				$this->db->order_by('created_date','asc');
+			}else if($search['sort']==4){
+				$this->db->order_by('created_date','desc');
+			}else{
+				$this->db->order_by('job_title','asc');
+			}
+		}else{
+			$this->db->order_by('created_date','desc');
+		}
 		$this->db->group_by('job_title');
 
 		$this->db->from('xx_job_post');
+		
 		return $this->db->count_all_results();
 	}
-
-
+	
 	//---------------------------------------------------------------------------	
 	// Get All Jobs
 	public function get_all_jobs($limit, $offset, $search)
@@ -44,8 +66,16 @@ class Job_Model extends CI_Model{
 		
 		// search URI parameters
 		unset($search['p']); //unset pagination parameter form search
-		if(!empty($search))
-			$this->db->where($search);
+		$search['sort'] = '1';
+		if(isset($search['sort'])){
+			$search['sort'] = $search['sort'];
+		}
+		if(!empty($search)){
+			if($search['sort']==''){
+				$this->db->where($search);
+			}
+		}
+		
 
 		if(!empty($search['job_title'])){
 			$search_text = explode('-', $search['job_title']);
@@ -55,13 +85,44 @@ class Job_Model extends CI_Model{
 			}
 		}
 		$this->db->where('is_status', 'active');
-		$this->db->order_by('created_date','desc');
+		
+		if(!empty($search['sort'])){
+			if($search['sort']==1){
+				$this->db->order_by('job_title','asc');
+			}else if($search['sort']==2){
+				$this->db->order_by('job_title','desc');
+			}else if($search['sort']==3){
+				$this->db->order_by('created_date','asc');
+			}else if($search['sort']==4){
+				$this->db->order_by('created_date','desc');
+			}else{
+				$this->db->order_by('job_title','asc');
+			}
+		}else{
+			$this->db->order_by('created_date','desc');
+		}
+		if(!empty($search['job_type'])){
+			$this->db->like('job_type', $search['job_type']);
+		}
+		if(!empty($search['job_type'])){
+			$this->db->like('job_type', $search['job_type']);
+		}
+		if(!empty($search['category'])){
+			$this->db->where('category', $search['category']);
+		}
+		if(!empty($search['experience'])){
+			$this->db->where('experience', $search['category']);
+		}
+		
+		
 		$this->db->group_by('job_title');
 		$this->db->limit($limit, $offset);
 		$query = $this->db->get();
-		//echo $this->db->last_query();
+		//echo $this->db->last_query();die;
 		return $query->result_array();
 	}
+	
+
 
 	//---------------------------------------------------------------------------	
 	// Get Job detail by ID
@@ -145,7 +206,7 @@ class Job_Model extends CI_Model{
 		$query = $this->db->get();
 		return $query->result_array();
 	}
-
+	
 
 } // endClass
 

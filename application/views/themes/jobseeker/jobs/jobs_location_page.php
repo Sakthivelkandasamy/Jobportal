@@ -46,18 +46,7 @@ background: #ff8a00;
 			</div>
 			<!-- Pagination -->
 			<div class="clearfix"></div>
-			<div class="utf-pagination-container-aera margin-top-20 margin-bottom-40">
-			  <nav class="pagination">
-				<ul>
-				  <li class="utf-pagination-arrow"><a href="#" class="ripple-effect"><i class="icon-material-outline-keyboard-arrow-left"></i></a></li>
-				  <li><a href="#" class="ripple-effect current-page">1</a></li>
-				  <li><a href="#" class="ripple-effect">2</a></li>
-				  <li><a href="#" class="ripple-effect">3</a></li>
-				  <li class="utf-pagination-arrow"><a href="#" class="ripple-effect"><i class="icon-material-outline-keyboard-arrow-right"></i></a></li>
-				</ul>
-			  </nav>
-			</div>
-			<div class="clearfix"></div>
+			
 		</div>
 	</div>
 </div>

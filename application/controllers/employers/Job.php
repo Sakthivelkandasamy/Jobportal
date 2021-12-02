@@ -12,7 +12,7 @@ class Job extends CI_Controller {
 
 	//---------------------------------------------------------------------------------------
 	public function post(){
-
+		$data['leftsidebar'] = 'themes/jobseeker/leftsidebar';
 		$emp_id = $this->session->userdata('employer_id');
 		$data['categories'] = $this->common_model->get_categories_list(); 
 		$data['industries'] = $this->common_model->get_industries_list();
@@ -94,7 +94,8 @@ class Job extends CI_Controller {
 	}
 
 	public function listing()
-	{
+	{	
+		$data['leftsidebar'] = 'themes/jobseeker/leftsidebar';
 		$emp_id = $this->session->userdata('employer_id');
 
 		$data['job_info'] = $this->job_model->get_all_jobs($emp_id);
@@ -108,6 +109,7 @@ class Job extends CI_Controller {
 	//-----------------------------------------------------------------------------------------
 	public function edit($job_id=0)
 	{
+		$data['leftsidebar'] = 'themes/jobseeker/leftsidebar';
 		$emp_id = $this->session->userdata('employer_id');
 
 		$data['categories'] = $this->common_model->get_categories_list(); 

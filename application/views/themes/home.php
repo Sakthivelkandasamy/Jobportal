@@ -23,34 +23,33 @@
           </div>
         </div>
       </div>
-       <?php $attributes = array('id' => 'search_job', 'method' => 'post');
+       <?php $attributes = array('id' => 'search_job1', 'method' => 'post');
        echo form_open('jobs/search',$attributes);?>
       <div class="row">
         <div class="col-md-12">
           <div class="utf-intro-banner-search-form-block margin-top-40"> 
             <div class="utf-intro-search-field-item">
 			  <i class="icon-feather-search"></i>
-              <input id="intro-keywords" type="text" placeholder="Search Jobs Keywords...">
+			   <input  id="job_sort_id" type="hidden" name="sort">
+              <input id="job_title" type="text" name="job_title" placeholder="Search Jobs Keywords...">
             </div>
 			<div class="utf-intro-search-field-item">
-              <select class="selectpicker default" data-live-search="true" data-selected-text-format="count" data-size="5" title="Select Location">
+              <select name="category" class="selectpicker default" data-live-search="true" data-selected-text-format="count" data-size="5" title="Select Category">
+                <?php foreach($categories as $cate):?>
+				<option value="<?= $cate['id']?>"><?= $cate['name']?></option>
+                <?php endforeach; ?>
+              </select>
+            </div>
+			<div class="utf-intro-search-field-item">
+              <select name="city" class="selectpicker default" data-live-search="true" data-selected-text-format="count" data-size="5" title="Select Location">
                 <?php foreach($cities as $city):?>
 				<option value="<?= $city['id']?>"><?= $city['name']?></option>
                 <?php endforeach; ?>
               </select>
             </div>
-			<div class="utf-intro-search-field-item">
-              <select class="selectpicker default" data-live-search="true" data-selected-text-format="count" data-size="5" title="All Categories">
-                <option>Customer Service</option>
-                <option>Data Analytics</option>
-                <option>Web Designing</option>
-                <option>Software Developing</option>
-                <option>Networking</option>
-                <option>Sales & Marketing</option>
-              </select>
-            </div>
+	
             <div class="utf-intro-search-button">
-              <button class="button ripple-effect" onclick="window.location.href='jobs-list-layout-leftside.html'"><i class="icon-material-outline-search"></i> Search Jobs</button>
+			<input type="submit" name="search" class="button ripple-effect" value="Search">
             </div>
           </div>
 		  <p class="utf-trending-silver-item"><span class="utf-trending-black-item">Trending Jobs Keywords:</span> <a href="#">Web Designer</a>  <a href="#">Web Developer</a>  <a href="#">Graphic Designer</a>  <a href="#">PHP Developer</a>  <a href="#">IOS Developer</a>  <a href="#">Android Developer</a></p>
@@ -60,7 +59,7 @@
       <div class="row">
         <div class="col-md-12">
           <ul class="intro-stats margin-top-45 hide-under-992px">
-            <li><i class="icon-material-outline-business-center"></i> <sub class="counter_item"><strong class="counter">18,955</strong> <span>Live Jobs Posted</span></sub> </li>
+            <li><i class="icon-material-outline-business-center"></i> <sub class="counter_item"><strong class="counter"><?php echo $category_counts['overalljobs_counts']; ?></strong> <span>Live Jobs Posted</span></sub> </li>
             <li><i class="icon-material-outline-assignment"></i> <sub class="counter_item"><strong class="counter">11,088</strong> <span>Jobs Candidate</span></sub> </li>
             <li><i class="icon-material-outline-library-books"></i> <sub class="counter_item"><strong class="counter">10,758</strong> <span>Companies Jobs</span></sub> </li>
           </ul>
@@ -68,7 +67,6 @@
       </div>
     </div>
   </div>
-  
   <!-- Jobs Category Boxes -->
  <div class="section margin-top-60 margin-bottom-70">
     <div class="container">
@@ -83,74 +81,75 @@
         </div>
 		<div class="col-xl-3 col-md-6 col-lg-4" style="background: #ffffff !important;"> 
 			<a href="<?= base_url('jobs/category/accounting'); ?>" class="photo-box photo-category-box small" >
-			  <div class="utf-opening-position-counter-item">18 Openings</div>
+			  <div class="utf-opening-position-counter-item"><?php echo $category_counts['accounting_counts']; ?> Openings</div>
 			  <div class="utf-opening-box-content-part">
 				<div class="utf-category-box-icon-item"> 
 				<img src="<?= base_url(''); ?>assets/img/o1.png" alt="">
 				</div>
+				
 				<h3>Accounting</h3>				
-				<span>4,218 Jobs</span> 
+				<span><?php echo $category_counts['accounting_counts']; ?> Jobs</span> 
 			  </div>
 			</a> 
 		</div>
         <div class="col-xl-3 col-md-6 col-lg-4"> 
-			<a href="<?= base_url('jobs/category/construction'); ?>" class="photo-box photo-category-box small" >
-			  <div class="utf-opening-position-counter-item">10 Openings</div>	
+			<a href="<?= base_url('jobs/search/category/construction'); ?>" class="photo-box photo-category-box small" >
+			  <div class="utf-opening-position-counter-item"><?php echo $category_counts['construction_counts']; ?> Openings</div>	
 			  <div class="utf-opening-box-content-part">
 				<div class="utf-category-box-icon-item"> 
 				<img src="<?= base_url(); ?>assets/img/o2.png" alt="">
 				</div>
 				<h3>Construction</h3>				
-				<span>2,612 Jobs</span> 
+				<span><?php echo $category_counts['construction_counts']; ?> Jobs</span> 
 			  </div>
 			</a> 
 		</div>
         
         <div class="col-xl-3 col-md-6 col-lg-4"> 
 			<a href="<?= base_url('jobs/category/information-technology'); ?>" class="photo-box photo-category-box small" >
-			  <div class="utf-opening-position-counter-item">25 Openings</div>
+			  <div class="utf-opening-position-counter-item"><?php echo $category_counts['information_counts']; ?> Openings</div>
 			  <div class="utf-opening-box-content-part">
 				<div class="utf-category-box-icon-item"> 
 				 <img src="<?= base_url(); ?>assets/img/o3.png" alt="">
 				</div>
 				<h3>Technology</h3>				
-				<span>2,186 Jobs</span> 
+				<span><?php echo $category_counts['information_counts']; ?> Jobs</span> 
 			  </div>
 			</a> 
 		</div>
         <div class="col-xl-3 col-md-6 col-lg-4"> 
 			<a href="<?= base_url('jobs/category/sales'); ?>" class="photo-box photo-category-box small" >
-			  <div class="utf-opening-position-counter-item">23 Openings</div>
+			  <div class="utf-opening-position-counter-item"><?php echo $category_counts['sales_counts']; ?> Openings</div>
 			  <div class="utf-opening-box-content-part">
 				<div class="utf-category-box-icon-item">
 				 <img src="<?= base_url(); ?>assets/img/o4.png" alt="">
 				</div>
 				<h3>Sales</h3>				
-				<span>5,298 Jobs</span> 
+				<span><?php echo $category_counts['sales_counts']; ?> Jobs</span> 
 			  </div>
 			</a> 
 		</div>
         <div class="col-xl-3 col-md-6 col-lg-4"> 
 			<a href="<?= base_url('jobs/category/medical-healthcare'); ?>" class="photo-box photo-category-box small" >
-			  <div class="utf-opening-position-counter-item">29 Openings</div>
+			  <div class="utf-opening-position-counter-item"><?php echo $category_counts['medical_counts']; ?> Openings</div>
 			  <div class="utf-opening-box-content-part">
 				<div class="utf-category-box-icon-item"> 
 				<img src="<?= base_url(); ?>assets/img/o5.png" alt="">
 				</div>
 				<h3>Medical</h3>				
-				<span>7,549 Jobs</span>
+				<span><?php echo $category_counts['medical_counts']; ?> Jobs</span>
 			  </div>
 			</a> 
 		</div>
         <div class="col-xl-3 col-md-6 col-lg-4"> 
 			<a href="<?= base_url('jobs/category/engineering'); ?>" class="photo-box photo-category-box small" >
-			  <div class="utf-opening-position-counter-item">36 Openings</div>
+			  <div class="utf-opening-position-counter-item"><?php echo $category_counts['engineering_counts']; ?> Openings</div>
 			  <div class="utf-opening-box-content-part">
 				<div class="utf-category-box-icon-item">
 				<img src="<?= base_url(); ?>assets/img/o6.png" alt="">
 				</div>
 				<h3>Engineering</h3>				
-				<span>2,873 Jobs</span>
+				<span><?php echo $category_counts['engineering_counts']; ?> Jobs</span>
 			  </div>
 			</a> 
 		</div>
@@ -175,13 +174,15 @@
 			<p class="utf-slogan-text">Lorem Ipsum is simply dummy text printing and type setting industry Lorem Ipsum been industry standard dummy text ever since when unknown printer took a galley.</p>
           </div>
           <div class="utf-listings-container-part compact-list-layout margin-top-35"> 
+		  
             <?php foreach($jobs as $job): ?>
+			
 			<a href="<?= site_url('jobs/'.$job['id'].'/'.($job['job_slug'])); ?>" class="utf-job-listing utf-apply-button-item"> 
 				<div class="utf-job-listing-details"> 
 				  <div class="utf-job-listing-company-logo"> <img src="<?= base_url(); ?>assets/img/job_icon.png" alt=""> </div>
 				  <div class="utf-job-listing-description">
 				    <span class="dashboard-status-button utf-job-status-item green"><i class="icon-material-outline-business-center"></i> Full Time</span>
-					<h3 class="utf-job-listing-title"> <?= $job['company_name']; ?> - <?= text_limit($job['job_title'], 35); ?></h3>
+					<h3 class="utf-job-listing-title"><?= text_limit($job['job_title'], 35); ?>  <small><?= $job['company_name']; ?> </small></h3>
 					<div class="utf-job-listing-footer">
 					  <ul>
 						<li><i class="icon-feather-briefcase"></i> <?= get_industry_name($job['industry']); ?></li>
@@ -361,51 +362,7 @@
   
   <!-- Icon Boxes / End --> 
    <!-- Start Need Any Help -->
-  <section class="section padding-top-65 padding-bottom-75">
-	  <div class="container">
-		<div class="col-xl-12">
-			<div class="utf-section-headline-item centered margin-top-0 margin-bottom-40">
-				<span>Business Help Service</span>
-				<h3>Need Any Help?</h3>
-				<div class="utf-headline-display-inner-item">Business Help Service</div>
-				<p class="utf-slogan-text">Lorem Ipsum is simply dummy text printing and type setting industry Lorem Ipsum been industry standard dummy text ever since when unknown printer took a galley.</p>
-			</div>
-		</div>
-		<div class="row need-help-area justify-content-center">
-		  <div class="col-xl-4">
-			<div class="info-box-1">
-			  <div class="utf-icon-box-circle">
-				<div class="utf-icon-box-circle-inner"> <i class="icon-brand-rocketchat"></i></div>
-              </div>	
-			  <h4>Chat to Us Online</h4>
-			  <p>Chat to us online if you have any question. meet your lending needs.</p>
-			 
-			  <a href="javascript:void(0);" class="button utf-ripple-effect-dark utf-button-sliding-icon margin-top-10">Click Here to Chat <i class="icon-feather-chevrons-right"></i></a> 
-			</div>
-		  </div>
-		  <div class="col-xl-4">
-			<div class="info-box-1">
-			  <div class="utf-icon-box-circle">
-				<div class="utf-icon-box-circle-inner"> <i class="icon-feather-phone"></i></div>
-              </div>	
-			  <h4>Our Support Agent</h4>
-			  <p>Our support agent will work with you to meet your lending needs.</p>
-			  <a href="contact.html" class="button utf-ripple-effect-dark utf-button-sliding-icon margin-top-10">Contact Us <i class="icon-feather-chevrons-right"></i></a> 
-			</div>
-		  </div>
-		  <div class="col-xl-4">
-			<div class="info-box-1">
-			  <div class="utf-icon-box-circle">
-				<div class="utf-icon-box-circle-inner"> <i class="icon-brand-bimobject"></i></div>
-              </div> 
-			  <h4>Read Latest Blog Post</h4>
-			  <p>Visit our Blog page and know more about news and career tips</p>
-			  <a href="blog-right-sidebar.html" class="button utf-ripple-effect-dark utf-button-sliding-icon margin-top-10">Read Blog Post <i class="icon-feather-chevrons-right"></i></a> 
-			</div>
-		  </div>
-		</div>
-	  </div>
-  </section>
+  
   <!-- End Need Any Help -->
   <!-- Testimonials -->
   <div class="section gray padding-top-65 padding-bottom-65">

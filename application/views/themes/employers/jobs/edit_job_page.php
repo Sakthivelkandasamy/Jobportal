@@ -1,47 +1,42 @@
-<!-- start banner Area -->
-<section class="banner-area relative" id="home">	
-	<div class="overlay overlay-bg"></div>
-	<div class="container">
-		<div class="row d-flex align-items-center justify-content-center">
-			<div class="about-content col-lg-12">
-				<h1 class="text-white">
-					Update Job				
-				</h1>	
-				<p class="text-white link-nav"><a href="<?= base_url(); ?>">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href=""> Post a New Job</a></p>
-			</div>											
-		</div>
-	</div>
-</section>
-<!-- End banner Area -->	
-
-<!-- Start post Area -->
-<section class="post-area section-gap">
-	<div class="container">
-		<div class="row justify-content-center d-flex">
-			<div class="col-lg-4 sidebar">					
-				<?php $this->load->view($emp_sidebar); ?>
+<div class="utf-dashboard-container-aera"> 
+    
+    <!-- Dashboard Sidebar / End --> 
+    <?php $this->load->view($leftsidebar); ?>
+    <!-- Dashboard Content -->
+    <div class="utf-dashboard-content-container-aera" data-simplebar>
+	  <div id="dashboard-titlebar" class="utf-dashboard-headline-item">
+		<div class="row">
+			<div class="col-xl-12">	
+				<h3>Update Job</h3>
+				<nav id="breadcrumbs">
+					<ul>
+					  <li><a href="<?= base_url(); ?>">Home</a></li>
+					 					  <li>Update Job</li>
+					</ul>
+				</nav>
 			</div>
-			
-			<div class="col-lg-8 post-list">
-				<div class="row">
-					<div class="col-12">
+		</div>		
+      </div>
+	  
+      <div class="utf-dashboard-content-inner-aera"> 
+	 <?php $attributes = array('id' => 'edit_job', 'method' => 'post');
+        			echo form_open('employers/job/edit/'.$job_detail['id'],$attributes);
+        			?>
+        <div class="row"> 
+          <div class="col-xl-12">
+            <div class="dashboard-box margin-top-0 margin-bottom-30"> 
+              <div class="headline">
+                <h3>Update Job</h3>
+              </div>
+              <div class="content with-padding padding-bottom-0">
+                <div class="row">
+				<div class="col-12">
 						<?php 
 							if($this->session->flashdata('edit_job_error')){
-				                echo '<div class="alert alert-danger">' . $this->session->flashdata('edit_job_error') . '</div>';
+				                echo '<div class="notification success closeable">' . $this->session->flashdata('edit_job_error') . '</div>';
 				        	}
 						?>
 					</div>
-
-					<?php $attributes = array('id' => 'edit_job', 'method' => 'post');
-        			echo form_open('employers/job/edit/'.$job_detail['id'],$attributes);
-        			?>
-
-					<div class="add_job_content col-lg-12">
-						<div class="headline">
-							<h3><i class="fa fa-folder-o"></i> Post a New Job</h3>
-						</div>
-						<div class="add_job_detail">
-							<div class="row">
 								<div class="col-12">
 									<div class="submit-field">
 										<h5>Job Title*</h5>
@@ -235,18 +230,23 @@
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="add_job_btn col-lg-12 mt-3">
+								<div class="add_job_btn col-lg-12 mt-3">
 						<div class="submit-field">
 							<input type="submit" class="job_detail_btn" name="edit_job" value="Update">
 						</div>
 					</div>
-					<?php echo form_close(); ?>
-				</div>													
-			</div>
-
-		</div>
-	</div>	
-</section>
-<!-- End post Area -->	
+							
+							
+				 </div>
+            </div>			
+          </div>
+        </div>
+         <?php echo form_close();?>    
+        <!-- Footer -->
+        <div class="utf-dashboard-footer-spacer-aera"></div>
+       
+      </div>
+	  
+    </div>
+    <!-- Dashboard Content / End -->     
+  </div>  

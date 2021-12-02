@@ -6,15 +6,10 @@
     padding: 9px;
 
 }
-.alert-success{
-	color: #ffff;
-    background: #388938;
-    padding: 7px;
-}
-.alert-danger{
-	color: #ffff;
-    background: red;
-    padding: 7px;
+.applied{
+	color: #fff !important;
+    background: #ff8a00 !important;
+	border: 1px solid #ff8a00 !important;
 }
 </style>
   <div class="single-page-header" data-background-image="images/single-job.jpg">
@@ -43,12 +38,7 @@
                 
               </div>
             </div>
-            <div class="utf-right-side">
-              <div class="salary-box">
-				<a href="#small-dialog" class="apply-now-button popup-with-zoom-anim margin-top-0">Apply For Jobs <i class="icon-feather-chevron-right"></i></a> 
-				<a href="#" class="button save-job-btn margin-top-20">Save For Jobs <i class="icon-feather-chevron-right"></i></a> 				  
-			  </div>
-            </div>
+			
           </div>
         </div>
       </div>
@@ -60,9 +50,7 @@
     <div class="row"> 
       <div class="col-xl-8 col-lg-8 utf-content-right-offset-aera">
         <div class="utf-single-page-section-aera">
-		  <div class="job-description-image-aera">
-			  <img src="images/job-detail-inner.png" alt="" />
-		  </div>	
+		  	
 		  <div class="utf-boxed-list-headline-item">
             <h3><i class="icon-material-outline-description"></i> Jobs Description</h3>
           </div>
@@ -92,47 +80,34 @@
 			<?php endforeach; ?>
 			</ul>		  
         </div>
-		  <div class="row">
-			<div class="col-xl-6 col-lg-6 col-sm-12">
-				<a href="#small-dialog" class="apply-now-button popup-with-zoom-anim margin-top-0">Apply Now <i class="icon-feather-chevron-right"></i></a>
-			</div>
-			<div class="col-xl-6 col-lg-6 col-sm-12">
-				<a href="#" class="button save-job-btn">Get Job Alerts <i class="icon-feather-chevron-right"></i></a>
-			</div>
-		  </div>
-		  <div class="utf-detail-social-sharing margin-top-25">
-			<span><strong>Social Sharing:-</strong></span>
-			<ul class="margin-top-15">
-				<li><a href="#" title="Facebook" data-tippy-placement="top"><i class="icon-brand-facebook-f"></i></a></li>
-				<li><a href="#" title="Twitter" data-tippy-placement="top"><i class="icon-brand-twitter"></i></a></li>
-				<li><a href="#" title="LinkedIn" data-tippy-placement="top"><i class="icon-brand-linkedin-in"></i></a></li>
-				<li><a href="#" title="Google Plus" data-tippy-placement="top"><i class="icon-brand-google"></i></a></li>
-				<li><a href="#" title="Whatsapp" data-tippy-placement="top"><i class="icon-brand-whatsapp"></i></a></li>
-				<li><a href="#" title="Pinterest" data-tippy-placement="top"><i class="icon-brand-pinterest-p"></i></a></li>
-			</ul>
-		  </div>
+		 
+		
         </div>
-		<div class="col-lg-12 col-12">
+		<?php if (!$this->session->userdata('is_user_login')){ ?>   
+            
+			
+				<a href="<?= base_url('auth/login'); ?>" class="apply-now-button">Apply For Jobs <i class="icon-feather-chevron-right"></i></a> 
+				
+			<?php } ?>
+		<?php if ($this->session->userdata('is_user_login')){ ?>   
+			
 				<?php if($this->session->flashdata('applied_success')): ?>
-		          <div class="alert alert-success">
-		            <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+		          <div class="notification success closeable">
 		            <?=$this->session->flashdata('applied_success')?>
 		          </div>
 		        <?php  endif; ?>
 		        <?php if($already_applied == true && $this->session->flashdata('applied_success') == null): ?>
-		          <div class="alert alert-success">
-		            <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+		          <div class="notification success closeable applied">
 		            You have already applied for this application
 		          </div>
 		        <?php  endif; ?>
 		        <?php if($this->session->flashdata('validation_errors')): ?>
-		         <div class="alert alert-danger">
-		          <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+		         <div class="notification error closeable">
 		          <?= $this->session->flashdata('validation_errors') ?>
 		        </div>
 		      <?php endif; ?>
-			</div>
-		<div id="apply-block">
+			
+			<div id="apply-block">
 					<div class="collapse" id="collapseExample">
 						<div class="card card-body">
 							<h4 class="card-title">Apply for this job</h4>
@@ -170,7 +145,7 @@
 						</div>
 					</div>
 				</div>
-		
+		<?php } ?>
 		
 		
 		

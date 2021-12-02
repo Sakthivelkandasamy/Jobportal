@@ -408,4 +408,13 @@ class Profile extends CI_Controller {
 			$this->load->view('themes/layout', $data);
 		}
 	}
+	public function dashboard(){
+
+		$data=array();
+		$user_id = $this->session->userdata('user_id');
+		$data['leftsidebar'] = 'themes/jobseeker/leftsidebar';
+		$data['user_info'] = $this->profile_model->get_user_by_id($user_id);
+			$data['layout'] = 'themes/jobseeker/setting/dashboard';
+		 $this->load->view('themes/layout', $data);
+	}
 }

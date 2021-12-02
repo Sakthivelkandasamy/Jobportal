@@ -48,7 +48,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="utf-buttons-to-right"> <a href="#" class="button red" title="Remove" data-tippy-placement="top"><i class="icon-feather-trash-2"></i> Remove</a> </div>
+                   
                   </li>
                 <?php endforeach; ?>
                 </ul>				
@@ -73,9 +73,7 @@
         
         <!-- Footer -->
         <div class="utf-dashboard-footer-spacer-aera"></div>
-        <div class="utf-small-footer margin-top-15">
-          <div class="utf-small-footer-copyrights">Copyright &copy; 2021 All Rights Reserved.</div>                    
-        </div>
+       
       </div>
     </div>
     <!-- Dashboard Content / End -->     

@@ -1,100 +1,76 @@
-<!-- start banner Area -->
-<section class="banner-area relative" id="home">  
-  <div class="overlay overlay-bg"></div>
-  <div class="container">
-    <div class="row d-flex align-items-center justify-content-center">
-      <div class="about-content col-lg-12">
-        <h1 class="text-white">
-          Manage Jobs       
-        </h1> 
-        <p class="text-white link-nav"><a href="<?= base_url('employers'); ?>">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href=""> Manage Jobs</a></p>
-      </div>                      
-    </div>
-  </div>
-</section>
-<!-- End banner Area -->  
-
-<!-- Start post Area -->
-<section class="post-area section-gap">
-  <div class="container">
-    <div class="row justify-content-center d-flex">
-      <div class="col-lg-4 sidebar">             
-        <?php $this->load->view($emp_sidebar); ?>
+<div class="utf-dashboard-container-aera"> 
+    
+    <!-- Dashboard Sidebar / End --> 
+    <?php $this->load->view($leftsidebar); ?>
+    <!-- Dashboard Content -->
+    <div class="utf-dashboard-content-container-aera" data-simplebar>
+	  <div id="dashboard-titlebar" class="utf-dashboard-headline-item">
+		<div class="row">
+			<div class="col-xl-12">	
+				<h3>Manage Jobs </h3>
+				<nav id="breadcrumbs">
+					<ul>
+					  <li><a href="<?= base_url('employers'); ?>">Home</a></li>
+					 					  <li>Manage Jobs </li>
+					</ul>
+				</nav>
+			</div>
+		</div>		
       </div>
-      <div class="col-lg-8 post-list">
-        <div class="col-md-12">
-          <?php if ($this->session->flashdata('update_success')) :?>
-            <div class="alert alert-success">
-              <a href="#" class="close" data-dimdiss="alert" aria-label="close" title="close">×</a>
-              <strong><?=$this->session->flashdata('update_success')?></strong> 
-            </div>
-          <?php endif;?>
-          <?php if ($this->session->flashdata('deleted')) :?>
-            <div class="alert alert-success">
-              <a href="#" class="close" data-dimdiss="alert" aria-label="close" title="close">×</a>
-              <strong><?=$this->session->flashdata('deleted')?></strong> 
-            </div>
-          <?php endif;?>
-        </div>
-        <div class="profile_job_content col-lg-12">
-          <div class="headline">
-            <div class="row">
-              <div class="col-md-8 col-sm-8">
-                <h3>Manage Your's Job</h3>
+	  
+      <div class="utf-dashboard-content-inner-aera"> 
+	 <?php $attributes = array('id' => 'post_job', 'method' => 'post');
+        			echo form_open('employers/job/post',$attributes);?>
+        <div class="row"> 
+          <div class="col-xl-12">
+            <div class="dashboard-box margin-top-0"> 
+              <div class="headline">
+                <h3>Manage Jobs</h3>
               </div>
-          </div>  
-        </div>
-
-        <div class="onjob-job-alerts">
-          <div class="table-responsive">
-            <table>
-              <thead>
-                <tr>
-                  <th>Job Title</th>
-                  <th>Applications</th>
-                  <th>Date</th>
-                  <th>Status</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php if(empty($job_info)): ?>
+              <div class="content">
+                <ul class="utf-dashboard-box-list">
+				  <?php if(empty($job_info)): ?>
                   <p class="text-gray"><strong>Sorry,</strong> you didn't posted any job yet!</p>
                 <?php endif; ?>
 
                 <?php foreach ($job_info as $job): ?>
-                <tr>
-                  <td>
-                    <h4><a href=""><?= $job['job_title']; ?></a></h4>
-                    <div class="job-listing-footer">
-                      <ul>
-                        <li><i class="fa fa-map-marker"></i> <?= get_city_name($job['city']); ?>, <?= get_country_name($job['country']); ?></li>
-                        <li><i class="fa fa-database"></i> <?= get_industry_name($job['industry']); ?></li>
-                      </ul>
-                    </div>
-                  </td>
-                  <td class="text-center">
-                    <a href="<?= base_url('employers/applicants/view/'.$job['id']); ?>">Applied (<?= $job['cand_applied']?>)</a><br/>
-                    <a href="<?= base_url('employers/applicants/shortlisted/'.$job['id']); ?>">Shortlisted (<?= $job['total_shortlisted']?>)</a><br/>
-                  </td>
-                  <td><?= $job['created_date']; ?></td>
-                  <td>
-                    <a href="<?= base_url('employers/job/delete/'.$job['id']); ?>" class="onjob-savedjobs-links btn-delete"><i title="delete" class="lnr lnr-trash"></i></a>
-                    <a href="<?= base_url('employers/job/edit/'.$job['id']); ?>" class="onjob-savedjobs-links"><i title="edit" class="lnr lnr-pencil"></i></a>
-                    <a href="<?= base_url('employers/job/edit/'.$job['id']); ?>" class="onjob-savedjobs-links"><i title="view" class="lnr lnr-eye"></i></a>
-                  </td>
-                </tr>
-                <?php endforeach; ?>
-              </tbody>
-            </table>
+                  <li> 
+                    <div class="utf-job-listing">                       
+                      <div class="utf-job-listing-details"> 
+                        <div class="utf-job-listing-description">
+						 
+						  <h3 class="utf-job-listing-title"><a href=""><?= $job['job_title']; ?></a></h3>
+						   <a href="<?= base_url('employers/applicants/view/'.$job['id']); ?>"><span class="dashboard-status-button utf-status-item green">Applied (<?= $job['cand_applied']?>)</span></a>&nbsp;<a href="<?= base_url('employers/applicants/shortlisted/'.$job['id']); ?>"><span class="dashboard-status-button utf-status-item green">Shortlisted (<?= $job['total_shortlisted']?>)</span></a>	
+						  <div class="utf-job-listing-footer">
+                            <ul>
+							  <li><i class="icon-feather-briefcase"></i>  <?= get_industry_name($job['industry']); ?></li>
+                              <li><i class="icon-material-outline-date-range"></i> <?= $job['created_date']; ?></li>
+                              <li><i class="icon-material-outline-location-on"></i> <?= get_city_name($job['city']); ?>, <?= get_country_name($job['country']); ?></li>
+                            </ul>
+							<div class="utf-buttons-to-right"> 
+								<a href="<?= base_url('employers/job/edit/'.$job['id']); ?>" class="button green ripple-effect ico" data-tippy-placement="top" data-tippy="" data-original-title="Edit"><i class="icon-feather-edit"></i></a>
+								<a href="<?= base_url('employers/job/delete/'.$job['id']); ?>" class="button red ripple-effect ico" data-tippy-placement="top" data-tippy="" data-original-title="Remove"><i class="icon-feather-trash-2"></i></a> 
+							</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>                    
+                  </li>
+				<?php endforeach; ?>
+                
+                </ul>
+              </div>
+            </div>
+			<!-- Pagination -->
+			
           </div>
         </div>
-
-      </div>                            
-
+         <?php echo form_close();?>    
+        <!-- Footer -->
+        <div class="utf-dashboard-footer-spacer-aera"></div>
+       
+      </div>
+	  
     </div>
-
-  </div>
-</div>  
-</section>
-      <!-- End Job listing Area -->
+    <!-- Dashboard Content / End -->     
+  </div>  

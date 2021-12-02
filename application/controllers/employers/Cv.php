@@ -57,7 +57,8 @@ class Cv extends CI_Controller{
 	//-----------------------------------------------------------------------------------------
 	// Shortlisted Applicant
 	public function shortlisted(){
-
+		
+		$data['leftsidebar'] = 'themes/jobseeker/leftsidebar';
 		$data['applicants'] = $this->cv_model->get_shortlisted_applicants(); 
 
 		$data['emp_sidebar'] = 'themes/employers/emp_sidebar'; // load sidebar for employer

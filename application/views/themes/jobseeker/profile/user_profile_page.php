@@ -284,9 +284,7 @@
          <?php echo form_close();?>    
         <!-- Footer -->
         <div class="utf-dashboard-footer-spacer-aera"></div>
-        <div class="utf-small-footer margin-top-15">
-          <div class="utf-small-footer-copyrights">Copyright &copy; 2021 All Rights Reserved.</div>
-        </div>
+       
       </div>
 	  
     </div>

@@ -71,6 +71,7 @@ var typed = new Typed('.typed-words', {
 	loop: true,
 	showCursor: true
 });
+
 </script>
 </body>
 </html>

@@ -114,6 +114,19 @@ class Common_model extends CI_Model
 	{
 		return $this->db->get('xx_expected_salary')->result_array();
 	}
+	function categorycounts($id)
+	{
+		
+		$query = $this->db->query('SELECT * FROM xx_job_post where is_status ="active" AND category = "'.$id.'"');
+		return $query->num_rows();
+		
+	}
+	function overalljobs_counts()
+	{
+		
+		$query = $this->db->query('SELECT * FROM xx_job_post where is_status ="active"');
+		return $query->num_rows();
+	}
 
 
 } // endClass

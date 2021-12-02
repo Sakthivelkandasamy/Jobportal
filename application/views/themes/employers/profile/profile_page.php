@@ -31,7 +31,7 @@
 	  <?php $attributes = array('id' => 'update_employers_form', 'method' => 'post' , 'class' => 'form_horizontal'); ?>
     				<?php echo form_open('employers/profile',$attributes);?>
         <div class="row"> 
-          <div class="col-xl-6">
+          <div class="col-xl-12">
             <div class="dashboard-box margin-top-0 margin-bottom-30"> 
               <div class="headline">
                 <h3>Personal Info	</h3>
@@ -128,9 +128,7 @@
          <?php echo form_close();?>    
         <!-- Footer -->
         <div class="utf-dashboard-footer-spacer-aera"></div>
-        <div class="utf-small-footer margin-top-15">
-          <div class="utf-small-footer-copyrights">Copyright &copy; 2021 All Rights Reserved.</div>
-        </div>
+        
       </div>
 	  
     </div>

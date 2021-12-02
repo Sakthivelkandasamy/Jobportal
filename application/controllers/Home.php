@@ -21,7 +21,26 @@ class Home extends CI_Controller {
 		$data['jobs'] = $this->home_model->get_jobs(8,0);
 
 		$data['companies'] =  $this->home_model->get_companies_logo(8,0);
-
+		$data['categories'] = $this->common_model->get_categories_list(); 
+		
+		$accounting_counts =  $this->common_model->categorycounts(1); 
+		$construction_counts =  $this->common_model->categorycounts(7); 
+		$information_counts =  $this->common_model->categorycounts(25); 
+		$sales_counts =  $this->common_model->categorycounts(19); 
+		$medical_counts =  $this->common_model->categorycounts(14); 
+		$engineering_counts =  $this->common_model->categorycounts(10); 
+		$overalljobs_counts =  $this->common_model->overalljobs_counts(); 
+		
+		$data['category_counts'] = array(
+		'accounting_counts' => $accounting_counts,
+		'construction_counts' => $construction_counts,
+		'information_counts' => $information_counts,
+		'sales_counts' => $sales_counts,
+		'medical_counts' => $medical_counts,
+		'engineering_counts' => $engineering_counts,
+		'overalljobs_counts' => $overalljobs_counts,
+		);
+		
 		$data['title'] = 'Home';
 		$data['layout'] = 'themes/home';
 		$this->load->view('themes/layout', $data);

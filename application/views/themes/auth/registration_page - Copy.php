@@ -1,38 +1,18 @@
-<div id="titlebar" class="gradient">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h2>Register</h2>
-          <nav id="breadcrumbs">
-            <ul>
-              <li><a href="<?= base_url('')?>">Home</a></li>
-              <li>Register</li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Page Content -->
-  <div class="container">
-    <div class="row">
-      <div class="col-xl-6 offset-xl-3">
-        <div class="utf-login-register-page-aera margin-bottom-50"> 
-          <div class="utf-welcome-text-item">
-            <h3>Create Your New Account!</h3>
-            <span>Don't Have an Account? <a href="<?= base_url('auth/login')?>">Log In!</a></span> 
-		  </div>
-          <?php $attributes = array('id' => 'registeration_form', 'method' => 'post',  'class' => 'login100-form validate-form'); ?>
+  <div class="container-login100">
+      <div class="wrap-login100">
+        <?php $attributes = array('id' => 'registeration_form', 'method' => 'post',  'class' => 'login100-form validate-form'); ?>
 
         <?php echo form_open('auth/registration',$attributes); ?>
-		  <?php 
+          <span class="login100-form-title pb-5">
+            Sign Up
+          </span>
+           <?php 
               if($this->session->flashdata('validation_errors')){
 
                 echo '<div class="alert alert-danger">' . $this->session->flashdata('validation_errors') . '</div>';
               }
           ?>
-           <div class="wrap-input100 mb-3" data-validate = "Valid name is required: johnny">
+          <div class="wrap-input100 mb-3" data-validate = "Valid name is required: johnny">
             <input class="input100" type="text" name="firstname" placeholder="First Name">
             <span class="focus-input100"></span>
             <span class="symbol-input100">
@@ -72,14 +52,26 @@
             </span>
           </div>
 
-         
-			<div class="checkbox margin-top-10">
-				<input type="checkbox" id="two-step0" name="termsncondition">
-				<label for="two-step0"><span class="checkbox-icon"></span> I Have Read and Agree to the <a href="#">Terms &amp; Conditions</a></label>
-		    </div>
-			<input type="submit" class="login100-form-btn button full-width utf-button-sliding-icon ripple-effect margin-top-10" name="submit" value="Create An Account ">
-         <?php echo form_close(); ?>
-         </div>
+          <div class="contact100-form-checkbox pt-2 ml-1">
+            <input class="input-checkbox100" id="ckb1" type="checkbox" name="termsncondition">
+            <label class="label-checkbox100" for="ckb1">
+              Terms & Conditions
+            </label>
+          </div>
+          
+          <div class="container-login100-form-btn pt-4">
+            <input type="submit" class="login100-form-btn" name="submit" value="Sign Up">
+          </div>
+        </form>
+
+        <div class="text-center w-full pt-4">
+            <span class="txt1">
+              Already a member?
+            </span>
+
+            <a class="txt1 bo1 hov1" href="<?= base_url(); ?>auth/login">
+              Sign in now             
+            </a>
+        </div>
       </div>
     </div>
-  </div>

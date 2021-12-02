@@ -50,7 +50,7 @@ class Auth extends CI_Controller {
 					);
 
 					$this->session->set_userdata($login_data);
-
+					
 					// redirected to last request page
 					if(!empty($this->session->userdata('last_request_page')))
 					{

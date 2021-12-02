@@ -22,16 +22,19 @@
 			  <!---
                 <li><a href="dashboard.html"><i class="icon-material-outline-dashboard"></i> Dashboard</a></li>
 				--->
-				<?php if ($this->session->userdata('is_employer_login')){ ?>   
-				<li class="<?= ($activePage == 'matching') ? 'active':''; ?>"><a href="<?= base_url('myjobs/matching'); ?>"><i class="icon-line-awesome-user-secret"></i> Manage Jobs Post</a></li>
-				<li class="<?= ($activePage == 'myjobs') ? 'active':''; ?>"><a href="<?= base_url('myjobs'); ?>"><i class="icon-feather-heart"></i>My Applications</a></li>
+				<?php if ($this->session->userdata('is_employer_login')){ ?> 
+				<li class="<?= ($activePage == 'dashboard') ? 'active':''; ?>"><a href="<?= base_url('employers/profile/dashboard'); ?>"><i class="icon-line-awesome-user-secret"></i>Dashboard</a></li>
 				<li  class="<?= ($activePage == 'profile') ? 'active':''; ?>"><a href="<?= base_url('employers/profile'); ?>"><i class="icon-feather-user"></i>Personal Info</a></li>
                 <li  class="<?= ($activePage == 'company') ? 'active':''; ?>"><a href="<?= base_url('employers/company'); ?>"><i class="icon-feather-user"></i>Company Info</a></li>
-               <li class="<?= ($activePage == 'change_password') ? 'active':''; ?>"><a href="<?= base_url('employers/setting/change_password'); ?>"><i class="icon-material-outline-rate-review"></i> Change Password</a></li>
+                <li class="<?= ($activePage == 'post') ? 'active':''; ?>"><a href="<?= base_url('employers/job/post'); ?>"><i class="icon-line-awesome-user-secret"></i>Post New Job</a></li>
+				<li class="<?= ($activePage == 'listing') ? 'active':''; ?>"><a href="<?= base_url('employers/job/listing'); ?>"><i class="icon-line-awesome-user-secret"></i> Manage Jobs Post</a></li>
+				<li class="<?= ($activePage == 'shortlisted') ? 'active':''; ?>"><a href="<?= base_url('employers/cv/shortlisted'); ?>"><i class="icon-feather-heart"></i>Shortlisted Resumes</a></li>
+				<li class="<?= ($activePage == 'change_password') ? 'active':''; ?>"><a href="<?= base_url('employers/setting/change_password'); ?>"><i class="icon-material-outline-rate-review"></i> Change Password</a></li>
 				
 				<li><a href="<?= base_url('auth/logout')?>"><i class="icon-material-outline-power-settings-new"></i> Logout</a></li>
              <?php }else if ($this->session->userdata('is_user_login')){  ?> 
-			 <li class="<?= ($activePage == 'matching') ? 'active':''; ?>"><a href="<?= base_url('myjobs/matching'); ?>"><i class="icon-line-awesome-user-secret"></i> Manage Jobs Post</a></li>
+			  <li class="<?= ($activePage == 'dashboard') ? 'active':''; ?>"><a href="<?= base_url('profile/dashboard'); ?>"><i class="icon-line-awesome-user-secret"></i>Dashboard</a></li>
+			 <li class="<?= ($activePage == 'matching') ? 'active':''; ?>"><a href="<?= base_url('myjobs/matching'); ?>"><i class="icon-line-awesome-user-secret"></i> Matching Jobs</a></li>
 				<li class="<?= ($activePage == 'myjobs') ? 'active':''; ?>"><a href="<?= base_url('myjobs'); ?>"><i class="icon-feather-heart"></i>My Applications</a></li>
 				<li  class="<?= ($activePage == 'profile') ? 'active':''; ?>"><a href="<?= base_url('profile'); ?>"><i class="icon-feather-user"></i> My Profile</a></li>
                 <li class="<?= ($activePage == 'change_password') ? 'active':''; ?>"><a href="<?= base_url('setting/change_password'); ?>"><i class="icon-material-outline-rate-review"></i> Change Password</a></li>

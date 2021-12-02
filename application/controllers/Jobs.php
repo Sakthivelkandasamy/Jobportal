@@ -35,9 +35,10 @@ class Jobs extends CI_Controller {
 	}
 
 	//--------------------------------------------------------------
-	// Advance Search functionality 
+	
 	public function search()
-	{
+	{	
+	
 		$search = array();
 		if($this->input->post('search'))
 		{
@@ -76,7 +77,12 @@ class Jobs extends CI_Controller {
 			// search employment type
 			if(!empty($this->input->post('employment_type')))
 				$search['employment_type'] = $this->input->post('employment_type');
-
+			
+			// search employment type
+			if(!empty($this->input->post('sort')))
+				$search['sort'] = $this->input->post('sort');
+	
+	
 			$query = $this->uri->assoc_to_uri($search);
 
 			redirect(base_url('jobs/search/'.$query),'refresh');
@@ -84,10 +90,7 @@ class Jobs extends CI_Controller {
 		}
 		$search_array = $this->uri->uri_to_assoc(3);
 		$search_query = $this->uri->assoc_to_uri($search_array);
-
-
 		$pg_arr = $this->pagination_assoc('p', 3); // private function
-
 		$count = $this->job_model->count_all_search_result($search_array);
 
 		$offset = $pg_arr['offset'];
@@ -99,10 +102,12 @@ class Jobs extends CI_Controller {
 
 		$this->pagination->initialize($config);
 
+		
 		$data['search_value'] = $search_array;
 		$data['jobs'] = $this->job_model->get_all_jobs($this->per_page_record, $offset, $search_array);
 		$data['cities'] = $this->common_model->get_cities_list(); 
 		$data['categories'] = $this->common_model->get_categories_list(); 
+		
 
 		$data['title'] = 'Search Result';
 		$data['layout'] = 'themes/jobseeker/jobs/job_list_page';
@@ -125,7 +130,8 @@ class Jobs extends CI_Controller {
 	public function category($title)
 	{
 		$search['category'] = get_category_id($title); // get category id by title
-
+	
+	
 		// pagination
 		$count = $this->job_model->count_all_search_result($search);
 		$offset = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
@@ -160,6 +166,7 @@ class Jobs extends CI_Controller {
 	// search job by industry
 	public function industry($title)
 	{
+		print_r($title);die;
 		$search['industry'] = get_industry_id($title); // get industry id by title
 
 		// pagination
@@ -231,9 +238,11 @@ class Jobs extends CI_Controller {
 		$data['job_detail'] = $this->job_model->get_job_by_id($job_id);
 
 		$data['job_actual_link'] = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; // redirect to same job detail page after login 
-
+		if($data['job_actual_link']){
+			$this->session->set_userdata('last_request_page',$data['job_actual_link']);
+		
+		}
 		$data['cities_job'] = $this->job_model->get_cities_with_jobs(); //right sidebar
-
 		$data['title'] = $data['job_detail']['job_title'];
 		$data['layout'] = 'themes/jobseeker/jobs/job_detail_page';
 		$this->load->view('themes/layout', $data);
@@ -288,6 +297,7 @@ class Jobs extends CI_Controller {
 
 		$qs_arr = $this->uri->uri_to_assoc($assoc_n);
 		$qa_tmp_arr = array();
+		$qs_tmp_arr = array();
 
 		foreach ($qs_arr as $key => $value) {
 			if ($key != $varkey) {
@@ -315,5 +325,7 @@ class Jobs extends CI_Controller {
 		return $arr;
 
 	}
+	
+	
 
 }// endClass

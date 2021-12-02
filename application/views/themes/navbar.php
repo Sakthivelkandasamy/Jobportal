@@ -85,7 +85,8 @@
 				  <li><a href="<?= base_url('myjobs/matching'); ?>"><i class="icon-material-outline-group"></i> Matching Jobs</a></li>
                   <li><a href="<?= base_url('setting/change_password'); ?>"><i class="icon-material-outline-star-border"></i>Change Password</a></li>
 					----->
-				 <li><a href="<?= base_url('auth/logout')?>"><i class="icon-material-outline-power-settings-new"></i> Logout</a></li>
+				<li><a href="<?= base_url('employers/profile/dashboard')?>"><i class="icon-feather-user"></i>Dashboard</a></li>
+                <li><a href="<?= base_url('auth/logout')?>"><i class="icon-material-outline-power-settings-new"></i> Logout</a></li>
                 </ul>
               </div>
 			 
@@ -110,7 +111,8 @@
 				  <li><a href="<?= base_url('myjobs/matching'); ?>"><i class="icon-material-outline-group"></i> Matching Jobs</a></li>
                   <li><a href="<?= base_url('setting/change_password'); ?>"><i class="icon-material-outline-star-border"></i>Change Password</a></li>
 				----->
-				 <li><a href="<?= base_url('auth/logout')?>"><i class="icon-material-outline-power-settings-new"></i> Logout</a></li>
+				<li><a href="<?= base_url('profile/dashboard')?>"><i class="icon-feather-user"></i>Dashboard</a></li>
+                 <li><a href="<?= base_url('auth/logout')?>"><i class="icon-material-outline-power-settings-new"></i> Logout</a></li>
                 </ul>
               </div>
 			 
